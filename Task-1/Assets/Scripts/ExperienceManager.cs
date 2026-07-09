@@ -1,8 +1,9 @@
+using TMPro;
 using UnityEngine;
 
 public class ExperienceManager : MonoBehaviour
 {
-    public int boxCount, pillCount;
+    public int boxCount, pillCount, lostCount;
     ItemConsumer[] itemConsumers;
 
     private void Awake()
@@ -11,8 +12,22 @@ public class ExperienceManager : MonoBehaviour
         SubscribeToEvents();
     }
 
+    private void Start()
+    {
+        UpdateResultsText();
+    }
 
+    private void UpdateResultsText()
+    {
+        textMeshPro.text = GetUpdatedString();
+    }
 
+    public string GetUpdatedString()
+    {
+        return $"--- RESULTS---\nBoxes: {boxCount}\nPills: {pillCount}\n\n\nLOST: {lostCount}";
+    }
+
+    public TextMeshProUGUI textMeshPro;
     private void Consumer_ItemConsumedEvent(ConveyerItem item)
     {
         switch (item.itemType)
@@ -31,6 +46,12 @@ public class ExperienceManager : MonoBehaviour
         }
 
         Destroy(item.gameObject);
+        UpdateResultsText();
+    }
+    private void Consumer_ItemDestroyedEvent(ConveyerItem item)
+    {
+        ++lostCount;
+        UpdateResultsText();
     }
 
 
@@ -44,14 +65,17 @@ public class ExperienceManager : MonoBehaviour
         foreach (ItemConsumer consumer in itemConsumers)
         {
             consumer.ItemConsumedEvent += Consumer_ItemConsumedEvent;
+            consumer.ItemDestroyedEvent += Consumer_ItemDestroyedEvent;
         }
     }
+
 
     private void UnsubscribeToEvents()
     {
         foreach (ItemConsumer consumer in itemConsumers)
         {
             consumer.ItemConsumedEvent -= Consumer_ItemConsumedEvent;
+            consumer.ItemDestroyedEvent -= Consumer_ItemDestroyedEvent;
         }
     }
 
