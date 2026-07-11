@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float fireSpeed;
     [SerializeField] private float gravityAcceleration = 0.1f;
+    [SerializeField] private GameObject baseGO;
     private float gravityForceToApply;
     private Rigidbody rb;
 
@@ -25,11 +26,32 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        var canvas = collision.gameObject.GetComponentInParent<PainterCanvas>();
+        if ( canvas == null)
+        {
+            Destroy(baseGO);
+            return;
+        }
+
+        AddToCanvas(canvas);
         Debug.Log($"Hit {collision.gameObject}");
+    }
+
+    private void AddToCanvas(PainterCanvas canvas)
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        baseGO.transform.SetParent(canvas.transform, true);
+        this.enabled = false;
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(Vector3.up * gravityForceToApply, ForceMode.Acceleration);
+        if ( rb.isKinematic == false)
+        {
+            rb.AddForce(Vector3.up * gravityForceToApply, ForceMode.Acceleration);        
+        }
     }
+
 }

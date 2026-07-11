@@ -291,4 +291,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaintGunController
   muzzleExit: {fileID: 9186202144895158178}
-  projectilePrefab: {fileID: 747019974324111205, guid: d41959f750787b64faf35b6c2f9d5f50, type: 3}
+  projectilePrefab: {fileID: 9143616196819971588, guid: d41959f750787b64faf35b6c2f9d5f50, type: 3}

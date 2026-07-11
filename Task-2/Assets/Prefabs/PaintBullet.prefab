@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 747019974324111205}
   - component: {fileID: 6071017445652061216}
   - component: {fileID: 1559631497694526616}
+  - component: {fileID: 9143616196819971588}
   m_Layer: 0
   m_Name: PaintBullet
   m_TagString: Untagged
@@ -101,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   fireSpeed: 5
-  gravityForce: 1
+  gravityAcceleration: 1
+  baseGO: {fileID: 3018588456668506620}
 --- !u!54 &1559631497694526616
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +131,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9143616196819971588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018588456668506620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee4c84896459bf4da69fb1634d0556d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Painter
+  objectRenderer: {fileID: 1572281234704885181}
 --- !u!1 &7077067035784604332
 GameObject:
   m_ObjectHideFlags: 0

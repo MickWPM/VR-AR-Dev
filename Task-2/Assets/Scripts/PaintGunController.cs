@@ -3,15 +3,18 @@ using UnityEngine;
 public class PaintGunController : MonoBehaviour
 {
     [SerializeField] private Transform muzzleExit;
-    [SerializeField] private Transform projectilePrefab;
+    [SerializeField] private Painter projectilePrefab;
+
+    public Color paintingColour = Color.white;
 
     public void Fire()
     {
         Fire(projectilePrefab);
     }
 
-    public void Fire(Transform prefab)
+    public void Fire(Painter prefab)
     {
-        Instantiate(prefab, muzzleExit.transform.position, muzzleExit.transform.rotation);
+        var painter = Instantiate(prefab, muzzleExit.transform.position, muzzleExit.transform.rotation) as Painter;
+        painter.SetColour(paintingColour);
     }
 }
