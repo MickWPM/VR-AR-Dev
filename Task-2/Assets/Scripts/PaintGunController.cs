@@ -58,7 +58,7 @@ public class PaintGunController : MonoBehaviour
         Debug.DrawRay(muzzleExit.position, dir, Color.red);
     }
 
-
+    [ContextMenu("Fire")]
     public void Fire()
     {
         if (currentlySamplingColour)
@@ -77,8 +77,10 @@ public class PaintGunController : MonoBehaviour
         painter.SetColour(paintingColour);
     }
 
+    public event System.Action<Color> PaintingColourChangedEvent;
     public void SetPaintingColour(Color colour)
     {
         paintingColour = colour;
+        PaintingColourChangedEvent?.Invoke(paintingColour);
     }
 }
