@@ -4,6 +4,7 @@ public class PaintGunController : MonoBehaviour
 {
     [SerializeField] private Transform muzzleExit;
     [SerializeField] private Transform projectilePrefab;
+
     public void Fire()
     {
         Fire(projectilePrefab);
