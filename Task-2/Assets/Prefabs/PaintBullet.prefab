@@ -144,6 +144,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Painter
   objectRenderer: {fileID: 1572281234704885181}
+  AddedToCanvasEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6071017445652061216}
+        m_TargetAssemblyTypeName: Bullet, Assembly-CSharp
+        m_MethodName: FreezeBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7077067035784604332
 GameObject:
   m_ObjectHideFlags: 0

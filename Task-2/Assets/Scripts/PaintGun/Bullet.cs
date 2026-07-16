@@ -25,30 +25,6 @@ public class Bullet : MonoBehaviour
     {
         rb.linearVelocity = transform.forward * fireSpeed;
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        var canvas = collision.gameObject.GetComponentInParent<PainterCanvas>();
-        if ( canvas == null)
-        {
-            Destroy(baseGO);
-            return;
-        }
-
-        AddToCanvas(canvas);
-        Debug.Log($"Hit {collision.gameObject}");
-    }
-
-    private void AddToCanvas(PainterCanvas canvas)
-    {
-        canvas.AddToCanvas(baseGO);
-        rb.linearVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        rb.constraints = RigidbodyConstraints.FreezeAll;
-        baseGO.transform.SetParent(canvas.transform, true);
-        this.enabled = false;
-    }
-
     private void FixedUpdate()
     {
         if ( rb.isKinematic == false)
@@ -59,4 +35,11 @@ public class Bullet : MonoBehaviour
         if ( lifeTime < 0 ) Destroy(baseGO);
     }
 
+    public void FreezeBullet()
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
+        this.enabled = false;
+    }
 }

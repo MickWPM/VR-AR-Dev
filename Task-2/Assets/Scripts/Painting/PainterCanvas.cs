@@ -9,6 +9,7 @@ public class PainterCanvas : MonoBehaviour
     public void AddToCanvas(GameObject go)
     {
         paintObjects.Add(go);
+        go.transform.parent = transform;
     }
 
     public void ResetCanvas()
