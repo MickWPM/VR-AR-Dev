@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PaintGunControls : MonoBehaviour
 {
@@ -13,16 +14,33 @@ public class PaintGunControls : MonoBehaviour
 
     [SerializeField] private float FireDelay = 0.5f;
     private float fireCountdown = 0;
+    private bool holdingGun = false;
     private void Update()
     {
         fireCountdown-= Time.deltaTime;
         if (fireCountdown > 0) return;
 
+        if (holdingGun) HoldingGunUpdate();
+    }
+
+    private void HoldingGunUpdate()
+    {
         if (attackAction.IsPressed())
         {
             fireCountdown = FireDelay;
             controller.Fire();
         }
+    }
+
+
+    public void GrabbedGun()
+    {
+        holdingGun = true;
+    }
+
+    public void ReleasedGun()
+    {
+        holdingGun = false;
     }
 
 }
