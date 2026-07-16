@@ -4,12 +4,16 @@ using UnityEngine.UI;
 
 public class PaintGunControls : MonoBehaviour
 {
-    private InputAction attackAction;
+    private InputAction attackAction, clearAction;
     private PaintGunController controller;
+    private PainterCanvas[] canvases;
     private void Awake()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
+        clearAction = InputSystem.actions.FindAction("Interact");
         controller = GetComponent<PaintGunController>();
+
+        canvases = GameObject.FindObjectsByType<PainterCanvas>(FindObjectsSortMode.None);
     }
 
     [SerializeField] private float FireDelay = 0.5f;
@@ -20,8 +24,16 @@ public class PaintGunControls : MonoBehaviour
         fireCountdown-= Time.deltaTime;
         if (fireCountdown > 0) return;
 
+        if (clearAction.WasPressedThisFrame())
+        {
+            foreach (var c in canvases)
+            {
+                c.ResetCanvas();
+            }
+        }
         if (holdingGun) HoldingGunUpdate();
     }
+
 
     private void HoldingGunUpdate()
     {

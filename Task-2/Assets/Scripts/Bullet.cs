@@ -39,6 +39,7 @@ public class Bullet : MonoBehaviour
 
     private void AddToCanvas(PainterCanvas canvas)
     {
+        canvas.AddToCanvas(this.gameObject);
         rb.linearVelocity = Vector3.zero;
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
