@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject baseGO;
     private float gravityForceToApply;
     private Rigidbody rb;
+    private float lifeTime = 10f;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Bullet : MonoBehaviour
         }
         gravityForceToApply = Physics.gravity.magnitude - gravityAcceleration;
     }
+
     void Start()
     {
         rb.linearVelocity = transform.forward * fireSpeed;
@@ -39,7 +41,7 @@ public class Bullet : MonoBehaviour
 
     private void AddToCanvas(PainterCanvas canvas)
     {
-        canvas.AddToCanvas(this.gameObject);
+        canvas.AddToCanvas(baseGO);
         rb.linearVelocity = Vector3.zero;
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints.FreezeAll;
@@ -53,6 +55,8 @@ public class Bullet : MonoBehaviour
         {
             rb.AddForce(Vector3.up * gravityForceToApply, ForceMode.Acceleration);        
         }
+        lifeTime -= Time.fixedDeltaTime;
+        if ( lifeTime < 0 ) Destroy(baseGO);
     }
 
 }
