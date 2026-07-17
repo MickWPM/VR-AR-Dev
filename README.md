@@ -34,7 +34,7 @@ As an example of extensibility; a "paintbrush" effect could be easily developed 
 
 
 Code:
-[Task 1 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/b055d9f89b266996847a809e8fb802a406dc321c/Task-2)
+[Task 2 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/b055d9f89b266996847a809e8fb802a406dc321c/Task-2)
 
 Video:
-[Task 1 summary video](https://youtu.be/CQKCS2rD5ag)
+[Task 2 summary video](https://youtu.be/CQKCS2rD5ag)
