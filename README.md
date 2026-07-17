@@ -18,7 +18,7 @@ Code:
 [Task 1 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/777238fe439d4a6106448adc9f84a34e0eae74d6/Task-1)
 
 Video:
-[Task 1 summary video](https://youtu.be/fLf8Xr39Rd8)
+[Task 1 summary video](https://youtu.be/Z60_fYfdPLE)
 
 ## Scenario 2 - Paint Gun
 
