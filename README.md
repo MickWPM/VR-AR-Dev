@@ -15,7 +15,7 @@ Features:
 The custom item type and consumer allows trivial extension to support any number of items. The event based consumer approach using the enum type supports any additional types by default and using the event chain we can remain decoupled and hook in any additional functionality related to item conumption we wish (eg. SFX, VFX, UI, subsequent experience triggers etc)
 
 Code:
-[Task 1 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/777238fe439d4a6106448adc9f84a34e0eae74d6/Task-1)
+[Task 1 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/37504e23bd5aad5234c0f0e8690a55d03b8c20c6/Task-1)
 
 Video:
 [Task 1 summary video](https://youtu.be/Z60_fYfdPLE)
