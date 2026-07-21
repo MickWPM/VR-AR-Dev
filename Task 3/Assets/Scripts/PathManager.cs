@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Splines;
 
 [ExecuteInEditMode]
@@ -6,13 +7,47 @@ public class PathManager : MonoBehaviour
 {
     public SplineContainer spline;
 
-    public Transform ApproachLanding, StartLanding, MidLanding, EndLanding;
+    private Transform ApproachLanding, StartLanding, MidLanding, EndLanding;
     public Transform[] waypoints;
     public SplineAnimate aircraftAnimator;
     public int nextWaypointIndex = 1;
 
-    [ContextMenu("Setup spline")]
-    public void SetupSpline()
+    private bool setupComplete = false;
+    private Vector3[] waypointPositions;
+
+    public void SetupPath(LandingStrip landingStrip)
+    {
+        waypointPositions = new Vector3[waypoints.Length];
+
+        ApproachLanding = landingStrip.ApproachLanding;
+        StartLanding = landingStrip.StartLanding;
+        MidLanding = landingStrip.MidLanding;
+        EndLanding = landingStrip.EndLanding;
+
+        waypoints[0].transform.position = transform.position;
+        waypointPositions[0] = transform.position;
+
+        Vector3 vectorToTarget = ApproachLanding.position - transform.position;
+        float distance = vectorToTarget.magnitude;  
+        Vector3 direction = vectorToTarget.normalized;
+
+        int numWaypointsToMove = waypoints.Length - 1;
+        float distanceToUseWhenPositioning = 0.9f;
+        float distancePerWaypoint = distanceToUseWhenPositioning * distance / numWaypointsToMove;
+        for (int i = 1; i < waypoints.Length; i++)
+        {
+            Vector3 newPos = i * distancePerWaypoint * direction + transform.position;
+            waypoints[i].transform.position = newPos;
+            waypointPositions[i] = newPos;
+        }
+
+        SetupSpline();
+        Destroy(waypoints[0].gameObject);
+
+        setupComplete = true;
+    }
+
+    private void SetupSpline()
     {
         var targetSpline = spline.Spline;
         targetSpline.Clear();
@@ -40,13 +75,28 @@ public class PathManager : MonoBehaviour
         Debug.Log($"Spline setup complete with {targetSpline.Count} knots.");
     }
 
-    private void Awake()
-    {
-        SetupSpline();
-    }
+
     private void Update()
     {
-        UpdateSpline();
+        if (setupComplete == false) return;
+
+        if (PathDirty())
+            UpdateSpline();
+    }
+
+    private float dirtyThreshold = 0.05f;
+    private bool PathDirty()
+    {
+        bool isDirty = false;
+        for (int i = nextWaypointIndex; i < waypointPositions.Length; i++)
+        {
+            if (Vector3.Distance(waypoints[i].transform.position, waypointPositions[i]) > dirtyThreshold)
+            {
+                isDirty = true;
+                waypointPositions[i] = waypoints[i].transform.position;
+            }
+        }
+        return isDirty;
     }
 
     public void UpdateSpline()
@@ -81,18 +131,23 @@ public class PathManager : MonoBehaviour
         }
     }
 
+
     private void CheckKnotPassed(float currentDist)
     {
         float nextKnotDist = GetDistanceToKnot(nextWaypointIndex);
         if (currentDist >= nextKnotDist)
         {
+            if (nextWaypointIndex < waypoints.Length)
+            {
+                Destroy(waypoints[nextWaypointIndex].gameObject);
+            }
             nextWaypointIndex++;
 
             if (nextWaypointIndex >= spline.Spline.Count)
             {
                 nextWaypointIndex = spline.Spline.Count - 1;
+                Destroy(this.gameObject);
             }
-
             Debug.Log($"TODO - RAISE AN EVENT... Passed a knot! Now heading towards knot {nextWaypointIndex}");
         }
     }
