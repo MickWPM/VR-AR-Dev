@@ -21,17 +21,42 @@ public class ExperienceManager : MonoBehaviour
         }
     }
 
+
+    private bool spawnComplete = false;
+    public void SpawnComplete()
+    {
+        spawnComplete = true;
+    }
+
+    private int spawned, crashed, landed;
     public void PlaneSpawned()
     {
+        ++spawned;
         PlaneSpawnEvent?.Invoke();
+        CheckGameOver();
     }
 
     public void PlaneCrashed()
     {
+        ++crashed;
         PlaneCrashEvent?.Invoke();
+        CheckGameOver();
     }
     public void PlaneLanded()
     {
+        ++landed;
         PlaneLandEvent.Invoke();
+        CheckGameOver();
+    }
+
+    public UnityEvent GameOverEvent;
+    private void CheckGameOver()
+    {
+        if (!spawnComplete) return;
+        if (crashed + landed == spawned)
+        {
+            GameOverEvent?.Invoke();
+            this.enabled = false;
+        }
     }
 }

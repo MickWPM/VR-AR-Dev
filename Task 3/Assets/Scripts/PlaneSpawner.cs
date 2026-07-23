@@ -14,7 +14,7 @@ public class PlaneSpawner : MonoBehaviour
         _ = SpawnAircraft();
     }
 
-    public UnityEvent PlaneSpawnedEvent;
+    public UnityEvent PlaneSpawnedEvent, SpawningCompleteEvent;
     async Awaitable SpawnAircraft()
     {
         for (int i = 0; i < numAircraftToSpawn; i++)
@@ -28,6 +28,8 @@ public class PlaneSpawner : MonoBehaviour
             var pathManager = go.GetComponent<PathManager>();
             pathManager.SetupPath(landingStrip);
         }
+
+        SpawningCompleteEvent?.Invoke();
     }
 
     Vector3 GetSpawnPosition()
