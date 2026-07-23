@@ -84,7 +84,7 @@ MonoBehaviour:
   - {fileID: 520296547519217677}
   - {fileID: 2905567910667138353}
   - {fileID: 1797388423673672889}
-  aircraftAnimator: {fileID: 0}
+  aircraftAnimator: {fileID: 4401373433767990604}
   nextWaypointIndex: 1
 --- !u!1 &1662558124415102400
 GameObject:
