@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlaneSpawner : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlaneSpawner : MonoBehaviour
         _ = SpawnAircraft();
     }
 
-
+    public UnityEvent PlaneSpawnedEvent;
     async Awaitable SpawnAircraft()
     {
         for (int i = 0; i < numAircraftToSpawn; i++)
@@ -23,6 +24,7 @@ public class PlaneSpawner : MonoBehaviour
             var prefabToSpawn = prefabs[Random.Range(0, prefabs.Length)];
 
             var go = Instantiate(prefabToSpawn, GetSpawnPosition(), Quaternion.identity);
+            PlaneSpawnedEvent?.Invoke();
             var pathManager = go.GetComponent<PathManager>();
             pathManager.SetupPath(landingStrip);
         }

@@ -161,6 +161,17 @@ public class PathManager : MonoBehaviour
         }
     }
 
+    public void CleanupOnCollision()
+    {
+        foreach (var waypoint in waypoints)
+        {
+            if (waypoint != null)
+            {
+                Destroy(waypoint.gameObject);
+            }
+        }
+    }
+
     private float GetDistanceToKnot(int knotIndex)
     {
         var targetSpline = spline.Spline;

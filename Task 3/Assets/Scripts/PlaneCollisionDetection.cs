@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlaneCollisionDetection : MonoBehaviour
 {
@@ -16,10 +17,12 @@ public class PlaneCollisionDetection : MonoBehaviour
         }
     }
 
-
+    public UnityEvent OnAircraftCollisionEvent;
     private void Collision()
     {
         Debug.Log("Collision!", gameObject);
+        OnAircraftCollisionEvent?.Invoke();
+        ExperienceManager.Instance.PlaneCrashed();
         Instantiate(onImpactSpawn, transform.position, Quaternion.identity);
         Destroy(gameObject.transform.root.gameObject);
     }
@@ -27,6 +30,7 @@ public class PlaneCollisionDetection : MonoBehaviour
     private void SuccessfulLanding(RunwaySafeHanger hanger)
     {
         Debug.Log("Safe landing at hanger");
+        ExperienceManager.Instance.PlaneLanded();
         Destroy(gameObject.transform.root.gameObject);
     }
 }

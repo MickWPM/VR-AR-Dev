@@ -552,6 +552,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneCollisionDetection
   onImpactSpawn: {fileID: 7934012734628438484, guid: fcf7187f75b5fc646a3d45b3c8e71416, type: 3}
+  OnAircraftCollisionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1208978623454183417}
+        m_TargetAssemblyTypeName: PathManager, Assembly-CSharp
+        m_MethodName: CleanupOnCollision
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &3194377272689691769
 PrefabInstance:
   m_ObjectHideFlags: 0
