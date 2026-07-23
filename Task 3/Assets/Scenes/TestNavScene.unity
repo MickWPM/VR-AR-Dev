@@ -1613,7 +1613,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlaneSpawner
   landingStrip: {fileID: 1037009895}
   prefabs:
+  - {fileID: 729111593016615885, guid: 183bdb5b56746dd4988b11612d0b031c, type: 3}
+  - {fileID: 729111593016615885, guid: 183bdb5b56746dd4988b11612d0b031c, type: 3}
   - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  - {fileID: 729111593016615885, guid: c616028fe010f6e40b709afa385d1128, type: 3}
+  - {fileID: 729111593016615885, guid: c616028fe010f6e40b709afa385d1128, type: 3}
 --- !u!4 &1755683232
 Transform:
   m_ObjectHideFlags: 0

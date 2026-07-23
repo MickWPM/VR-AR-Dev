@@ -1,0 +1,3 @@
+Audio:
+All sounds from https://pixabay.com/sound-effects
+Looping edits made as required using Audacity. Filenames from source unchanged unless loop edits applied; if so pre-appended with 'LoopEdited-'
