@@ -5,6 +5,8 @@ public class PlaneSpawner : MonoBehaviour
     public LandingStrip landingStrip;
     public GameObject[] prefabs;
     private SphereCollider[] colliders;
+
+    public int numAircraftToSpawn = 100;
     private void Start()
     {
         colliders = GetComponentsInChildren<SphereCollider>();
@@ -14,7 +16,7 @@ public class PlaneSpawner : MonoBehaviour
 
     async Awaitable SpawnAircraft()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < numAircraftToSpawn; i++)
         {
             var delay =  Random.Range(3, 5);
             await Awaitable.WaitForSecondsAsync(delay);
