@@ -618,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3680732725805477303, guid: 9d28869535eafdf4295093ea23c1b2f3, type: 3}
       propertyPath: numAircraftToSpawn
-      value: 5
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3680732725805477303, guid: 9d28869535eafdf4295093ea23c1b2f3, type: 3}
       propertyPath: PlaneSpawnedEvent.m_PersistentCalls.m_Calls.Array.size
