@@ -87,6 +87,17 @@ public class PathManager : MonoBehaviour
     private float dirtyThreshold = 0.05f;
     private bool PathDirty()
     {
+
+        var targetSpline = spline.Spline;
+        //As we are changing waypoints we need to ensure that we to scale our current position by absolute distance travelled.
+        //Otherwise the aircraft will move along the spline as the total path length is shorter/longer
+        //This is because the aircraft animate component uses a distance in the range 0-1 to represent the animation
+        splineOriginalLength = spline.CalculateLength();
+        aircraftAbsoluteSplineDistance = aircraftAnimator.NormalizedTime * splineOriginalLength;
+
+        CheckKnotPassed(aircraftAbsoluteSplineDistance);
+
+
         bool isDirty = false;
         for (int i = nextWaypointIndex; i < waypointPositions.Length; i++)
         {
@@ -99,18 +110,12 @@ public class PathManager : MonoBehaviour
         return isDirty;
     }
 
+    private float splineOriginalLength;
+    private float aircraftAbsoluteSplineDistance;
     public void UpdateSpline()
     {
         var targetSpline = spline.Spline;
-
-        //As we are changing waypoints we need to ensure that we to scale our current position by absolute distance travelled.
-        //Otherwise the aircraft will move along the spline as the total path length is shorter/longer
-        //This is because the aircraft animate component uses a distance in the range 0-1 to represent the animation
-        float originalLength = spline.CalculateLength();
-        float currentAbsoluteDistance = aircraftAnimator.NormalizedTime * originalLength;
-
-        CheckKnotPassed(currentAbsoluteDistance);
-
+        //.........
 
         for (int i = 0; i < waypoints.Length; i++)
         {
@@ -127,7 +132,7 @@ public class PathManager : MonoBehaviour
 
         if (newLength > 0.001f)
         {
-            aircraftAnimator.NormalizedTime = currentAbsoluteDistance / newLength;
+            aircraftAnimator.NormalizedTime = aircraftAbsoluteSplineDistance / newLength;
         }
     }
 
@@ -147,8 +152,12 @@ public class PathManager : MonoBehaviour
             {
                 nextWaypointIndex = spline.Spline.Count - 1;
                 Destroy(this.gameObject);
+                Debug.Log("TODO - RAISE EVENT THAT WE HAVE FINISHED THE LANDING");
             }
-            Debug.Log($"TODO - RAISE AN EVENT... Passed a knot! Now heading towards knot {nextWaypointIndex}");
+            else
+            {
+                Debug.Log($"TODO - RAISE AN EVENT... Passed a knot! Now heading towards knot {nextWaypointIndex}");
+            }
         }
     }
 

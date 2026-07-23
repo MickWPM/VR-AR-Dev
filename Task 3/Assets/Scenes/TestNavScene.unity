@@ -811,8 +811,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836660568}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11970584, y: 0.67347956, z: -0.111852735, w: 0.72082233}
-  m_LocalPosition: {x: -7.5697985, y: 2.8471699, z: 0.23573613}
+  m_LocalRotation: {x: 0.032531407, y: -0.881005, z: 0.0612724, w: 0.46799308}
+  m_LocalPosition: {x: 1.47509, y: 2.039932, z: 3.724921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1614,7 +1614,13 @@ MonoBehaviour:
   landingStrip: {fileID: 1037009895}
   prefabs:
   - {fileID: 729111593016615885, guid: c616028fe010f6e40b709afa385d1128, type: 3}
-  numAircraftToSpawn: 1
+  - {fileID: 729111593016615885, guid: c616028fe010f6e40b709afa385d1128, type: 3}
+  - {fileID: 729111593016615885, guid: 183bdb5b56746dd4988b11612d0b031c, type: 3}
+  - {fileID: 729111593016615885, guid: 183bdb5b56746dd4988b11612d0b031c, type: 3}
+  - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  - {fileID: 729111593016615885, guid: 758545faceab5d243a1e818996ee0b8f, type: 3}
+  numAircraftToSpawn: 10
 --- !u!4 &1755683232
 Transform:
   m_ObjectHideFlags: 0
