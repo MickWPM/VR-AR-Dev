@@ -1,0 +1,7 @@
+Audio:
+All sounds from https://pixabay.com/sound-effects
+Looping edits made as required using Audacity. Filenames from source unchanged unless loop edits applied; if so pre-appended with 'LoopEdited-'
+
+
+Terrain Textures Pack Free:
+https://assetstore.unity.com/packages/2d/textures-materials/floors/terrain-textures-pack-free-139542
