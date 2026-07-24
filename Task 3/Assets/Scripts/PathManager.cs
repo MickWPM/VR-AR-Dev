@@ -115,7 +115,6 @@ public class PathManager : MonoBehaviour
     public void UpdateSpline()
     {
         var targetSpline = spline.Spline;
-        //.........
 
         for (int i = 0; i < waypoints.Length; i++)
         {
