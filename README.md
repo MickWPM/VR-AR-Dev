@@ -38,3 +38,25 @@ Code:
 
 Video:
 [Task 2 summary video](https://youtu.be/CQKCS2rD5ag)
+
+
+## Scenario 3 - Aircraft controller
+
+Features:
+- Spline based aircraft paths with dynamic position readjustment based on spline length change to preserve relative world space location
+- Aircraft mid air and ground collision with effects. Collision matrix customised to maximise control over interactions
+- Event based callbacks on spawn/landing/collision
+- Spawn manager spawns in random locations from 'probability distribution' of candidate aircraft
+- 3 aircraft type with unique speed, collision sizes and path visualisations
+- Dynamic spline connection between aircraft flight waypoints and landing approach/landing static waypoints
+- Waypoint interaction disabled once aircraft pass
+- Experience manager event based communication pipeline 
+- "Scoreboard" using world space UI, updated based experience manager events
+
+Communication is managed through events; unity events where static scene objects exits, C# manual events where required dynamically at runtime. This allows significant extensibility. Aircraft type are generalised and can be extended trivially with new models, flight speed, waypoint quantities and more.
+
+Code:
+[Task 3 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/d7c81b53be82a0c291166700022b4a5d031343cc/Task%203)
+
+Video:
+[Task 3 summary video](https://youtu.be/zltqQmo73zE)
