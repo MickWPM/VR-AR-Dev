@@ -1,0 +1,5 @@
+Mud textures:
+Gemini: 
+Base: "Please generate me a slightly toony mud texture"
+Height: "ok that looks great. Can you generate a heightmap for that too? I will use it to control a "wetness" shine"
+Normals: "ok please generate the normal map for the same mud texture"
