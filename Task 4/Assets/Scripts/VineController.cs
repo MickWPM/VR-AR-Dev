@@ -5,6 +5,7 @@ public class VineController : MonoBehaviour
 {
     public Transform growingVinesParent;
     private List<Material> vineMaterials;
+    public GameObject leafParticles;
 
     private void Awake()
     {
@@ -17,24 +18,25 @@ public class VineController : MonoBehaviour
                 vineMaterials.Add(m);
             }
         }
-
+        leafParticles.SetActive(false);
         UpdateGrowth();
     }
 
     [SerializeField] private float growthTime = 2.5f;
     [SerializeField]private float growth = 0f;
 
-    //public bool growTest = false;
-    //private void Update()
-    //{
-    //    if (growTest)
-    //    {
-    //        Grow();
-    //    }else
-    //    {
-    //        Shrink();
-    //    }
-    //}
+    public bool growTest = false;
+    private void Update()
+    {
+        if (growTest)
+        {
+            Grow();
+        }
+        else
+        {
+            Shrink();
+        }
+    }
 
     public void Grow()
     {
@@ -58,5 +60,8 @@ public class VineController : MonoBehaviour
         {
             vineMat.SetFloat("_Growth", growth);
         }
+
+
+        leafParticles.SetActive(growth > 0.95f);
     }
 }
