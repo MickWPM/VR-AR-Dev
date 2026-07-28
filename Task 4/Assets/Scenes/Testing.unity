@@ -502,9 +502,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2604413535412578213, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2640017989956199637, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
       propertyPath: m_Name
       value: Fire Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459219086304069330, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bde1a1afb918104bb7a55d729180dd5, type: 2}
+    - target: {fileID: 5115148004337809868, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bde1a1afb918104bb7a55d729180dd5, type: 2}
+    - target: {fileID: 6621564362839048585, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7945350694018634910, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
       propertyPath: m_LocalPosition.x
