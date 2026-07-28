@@ -7,3 +7,8 @@ Normals: "ok please generate the normal map for the same mud texture"
 # Rock textures:
 Dark Rock 02 by Amal Kumar (CC0)
 https://polyhaven.com/a/dark_rock_02
+
+
+#Sand texture
+brown sands by Daniel Straub (CC0)
+https://unsplash.com/photos/brown-sands-n5HOJGtYt4Q
