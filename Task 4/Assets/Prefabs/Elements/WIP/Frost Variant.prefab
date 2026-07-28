@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4751206248942525810
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181377474505993249, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190847913426763388, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_Name
+      value: EmberRepurposed!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5426903517956457315, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5134297517c028341a4e819a7d66cf1f, type: 2}
+    - target: {fileID: 6522809362116467818, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
+      propertyPath: m_Name
+      value: Frost Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99a806b91da122549a5b65253b7d74de, type: 3}
