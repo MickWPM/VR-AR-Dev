@@ -25,21 +25,35 @@ public class VineController : MonoBehaviour
     [SerializeField] private float growthTime = 2.5f;
     [SerializeField]private float growth = 0f;
 
-    public bool growTest = false;
+    public bool fullGrow = false;
+    public bool fullWithdraw = false;
     private void Update()
     {
-        if (growTest)
+        if (fullGrow)
         {
             Grow();
+            if(1f - growth < Mathf.Epsilon) fullGrow = false;
         }
-        else
+        else if (fullWithdraw)
         {
             Shrink();
+            if (growth < Mathf.Epsilon) fullWithdraw = false;
         }
+    }
+
+    public void FullGrow()
+    {
+        Debug.Log("Grow called");
+        fullGrow = true;
+    }
+    public void FullWithdraw()
+    {
+        fullWithdraw = true;
     }
 
     public void Grow()
     {
+        Debug.Log("Growing");
         float growthRate = 1 / growthTime;
         growth += Time.deltaTime * growthRate;
         UpdateGrowth();

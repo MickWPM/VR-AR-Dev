@@ -39,7 +39,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 0.05
-    - _FillLevel: 0.201
+    - _FillLevel: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scale: 1

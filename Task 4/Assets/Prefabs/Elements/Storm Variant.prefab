@@ -5361,6 +5361,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1881966163738928001}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6853369289649339080}
     - targetCorrespondingSourceObject: {fileID: 518618627497815567, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8484871709656343552}
@@ -5395,3 +5398,21 @@ MonoBehaviour:
   lightningParent: {fileID: 4590795605233797548}
   lightningStrikeDelayRange: {x: 0.1, y: 2}
   lightningStrikePositionOffsetRange: 0.1
+--- !u!1 &8721063895723913652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+  m_PrefabInstance: {fileID: 6005566751905633381}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6853369289649339080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8721063895723913652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35eb743b43b976b418dbcf7ab42f7b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  element: {fileID: 0}

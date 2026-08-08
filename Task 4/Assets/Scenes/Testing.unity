@@ -205,8 +205,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335318973}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04815861, y: -0.94939, z: 0.25165576, w: 0.1816832}
-  m_LocalPosition: {x: 0.18112919, y: 0.53, z: 1.422}
+  m_LocalRotation: {x: -0.26425835, y: 0.29368472, z: -0.08484634, w: -0.9147229}
+  m_LocalPosition: {x: 3.3212066, y: 4.12276, z: -7.3750625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -304,18 +304,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5007155374511310452, guid: 93d190403d73eed4c92f42706d2ba3a9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7527877764546000362, guid: 93d190403d73eed4c92f42706d2ba3a9, type: 3}
       propertyPath: m_Name
       value: Vine Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 7788234988095202124, guid: 93d190403d73eed4c92f42706d2ba3a9, type: 3}
-      propertyPath: leafParticles
-      value: 
-      objectReference: {fileID: 1929520467}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -551,11 +543,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f96977eb142a4294bb748c4efe4f5c82, type: 3}
---- !u!1 &1929520467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2351751352043195804, guid: 93d190403d73eed4c92f42706d2ba3a9, type: 3}
-  m_PrefabInstance: {fileID: 519479209}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1977375881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -906,14 +893,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45440755235152872, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 687871848182590281, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 2655520694183541049, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -954,18 +933,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7190135220397533347, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7942935785921743218, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
-    - target: {fileID: 8567106405615342445, guid: 4f9393e1f5a16e544a1f6b1023033da2, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1250,10 +1221,6 @@ PrefabInstance:
     - target: {fileID: 5875707009126773075, guid: 1ed0c11611463b547b3652b0015f1418, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7765744558433176000, guid: 1ed0c11611463b547b3652b0015f1418, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

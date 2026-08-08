@@ -143,6 +143,77 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &3126509393111954972
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 551774512666440940}
+    m_Modifications:
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.406
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139026668794150428, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075843997550987014, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+      propertyPath: m_Name
+      value: Steam Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+--- !u!4 &266083024102211921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2941631912810379085, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+  m_PrefabInstance: {fileID: 3126509393111954972}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5283255738708750618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7075843997550987014, guid: 47c7b1382dc8ecc42bec0fde7f70461c, type: 3}
+  m_PrefabInstance: {fileID: 3126509393111954972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4928490845884804259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,10 +279,22 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4885789530086611023, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1356830812017793254}
+    - targetCorrespondingSourceObject: {fileID: 4885789530086611023, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 266083024102211921}
     - targetCorrespondingSourceObject: {fileID: 5573652443395126009, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2470011616056619808}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1392291175203632592}
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1627465965457462727}
+    - targetCorrespondingSourceObject: {fileID: 518618627497815567, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6456327206583358088}
   m_SourcePrefab: {fileID: 100100000, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
 --- !u!4 &551774512666440940 stripped
 Transform:
@@ -223,6 +306,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5573652443395126009, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
   m_PrefabInstance: {fileID: 4928490845884804259}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4852352256979370668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 518618627497815567, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+  m_PrefabInstance: {fileID: 4928490845884804259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6456327206583358088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852352256979370668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d31a7b41367c2654ca7b4f824a1c4587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterController
+  steamGO: {fileID: 5283255738708750618}
+  waterLevel: 0.1
+  waterRenderer: {fileID: 7495550935908635307}
+--- !u!1 &7942935785921743218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+  m_PrefabInstance: {fileID: 4928490845884804259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1392291175203632592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942935785921743218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35eb743b43b976b418dbcf7ab42f7b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  element: {fileID: 11400000, guid: d5e8a1e24c233d84f99e9936d3509647, type: 2}
+--- !u!114 &1627465965457462727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942935785921743218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a277f8c5c65b7646b5c126217440908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConsumeElement
+  DestroyOnHit: 0
+  element: {fileID: 11400000, guid: 4699139bbc6c73541a18386374f21764, type: 2}
+  OnElementHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnElementStay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6456327206583358088}
+        m_TargetAssemblyTypeName: WaterController, Assembly-CSharp
+        m_MethodName: ChangeWater
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6456327206583358088}
+        m_TargetAssemblyTypeName: WaterController, Assembly-CSharp
+        m_MethodName: SetSteamLife
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.5
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &9206517061009591855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -300,6 +465,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b2eea5e786d7d489ba216e3dec2869, type: 3}
+--- !u!23 &7495550935908635307 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 23b2eea5e786d7d489ba216e3dec2869, type: 3}
+  m_PrefabInstance: {fileID: 9206517061009591855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8669049952765323716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23b2eea5e786d7d489ba216e3dec2869, type: 3}

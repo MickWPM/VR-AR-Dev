@@ -319,8 +319,121 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5573652443395126009, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7594734163308064530}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -653986099815764795}
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2897050773828448550}
+    - targetCorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6005763584798175468}
+    - targetCorrespondingSourceObject: {fileID: 518618627497815567, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5334056717231478277}
   m_SourcePrefab: {fileID: 100100000, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+--- !u!1 &1563052569546043153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 518618627497815567, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+  m_PrefabInstance: {fileID: 1334073617526669598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5334056717231478277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563052569546043153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4724bcef63f1beb428358a09de5a628d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MudController
+  hydrationLevel: 0.1
+  mudRenderer: {fileID: 2863868807608442474}
+--- !u!1 &4097407800064681167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3053297939043640785, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
+  m_PrefabInstance: {fileID: 1334073617526669598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-653986099815764795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097407800064681167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35eb743b43b976b418dbcf7ab42f7b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Element
+  element: {fileID: 0}
+--- !u!114 &2897050773828448550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097407800064681167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a277f8c5c65b7646b5c126217440908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConsumeElement
+  DestroyOnHit: 0
+  element: {fileID: 11400000, guid: d5e8a1e24c233d84f99e9936d3509647, type: 2}
+  OnElementHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnElementStay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5334056717231478277}
+        m_TargetAssemblyTypeName: MudController, Assembly-CSharp
+        m_MethodName: ChangeWater
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6005763584798175468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097407800064681167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a277f8c5c65b7646b5c126217440908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConsumeElement
+  DestroyOnHit: 0
+  element: {fileID: 11400000, guid: 4699139bbc6c73541a18386374f21764, type: 2}
+  OnElementHit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnElementStay:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5334056717231478277}
+        m_TargetAssemblyTypeName: MudController, Assembly-CSharp
+        m_MethodName: ChangeWater
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -0.3
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &5858720573014104401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4885789530086611023, guid: 13f276ad2eca59349bf11be1123b1dc7, type: 3}
