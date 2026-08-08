@@ -60,3 +60,28 @@ Code:
 
 Video:
 [Task 3 summary video](https://youtu.be/zltqQmo73zE)
+
+## Scenario 4 - Alchemy
+
+Features:
+- Created visuals for Flame, Steam, Storm, Frost, Mud, Vine, Sand, Ember, Spark, Smoke, Stone, Ash, Crystal, Glow, Water, Ice
+- Implemented texturing, particles, custom shaders, custom 2D art and 3D models
+- Custom shader detail:
+  - Mud - Used texture heightmap to show varying level of water
+  - Water - Used world space up and sine wave to dynamically display varied levels of water inside a container
+  - Ash - Dissolve over time using noise including edge threshold to show "fire" edges
+  - Vine - Custom model to 'grow' the vine based off model UV coordinate using emission to fake volume
+  - Crystal - Custom model with crystal faces scaled to full UV to allow edge highlighting. Scene colour sampling to emulate refraction
+- Interaction including:
+  - complete vine growth/retraction when consuming water/fire.
+  - Mud water level slowly changing when exposed to water/fire
+  - Water level slowly lowering while producing steam when exposed to fire
+
+The interaction approach leveraged scriptable objects for element definition (over eg. enum) to maximise future scalability. Element consumption through exposed events allows designer friendly interactions (both on collision and stay) while allowing for more advanced specific implementations through code. 
+
+
+Code:
+[Task 4 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/2290693237b3b1acd222813db99dd14ed5f71a82/Task%204)
+
+Video:
+[Task 4 summary video](https://youtu.be/GV403oGluyU)
