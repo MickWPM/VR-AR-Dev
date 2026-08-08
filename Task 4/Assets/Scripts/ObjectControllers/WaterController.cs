@@ -1,4 +1,3 @@
-using UnityEditor.SceneTemplate;
 using UnityEngine;
 
 public class WaterController : MonoBehaviour
