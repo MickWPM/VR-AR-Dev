@@ -4,6 +4,9 @@ using UnityEngine.Rendering;
 
 public class Geometry : MonoBehaviour
 {
+    public enum TestType { PlaneCut, RayCut}
+    public TestType testType = TestType.RayCut;
+
     public GameObject rayObject;
     public GameObject markerPrefab;
     private GameObject marker;
@@ -24,8 +27,17 @@ public class Geometry : MonoBehaviour
 
     void Update()
     {
-        //PlaneCutGeometry();
-        RayCutGeometry();
+        switch (testType)
+        {
+            case TestType.PlaneCut:
+                PlaneCutGeometry();
+                break;
+            case TestType.RayCut:
+                RayCutGeometry();
+                break;
+            default:
+                break;
+        }
     }
 
     void RayCutGeometry()
@@ -98,13 +110,15 @@ public class Geometry : MonoBehaviour
                 newFaces[newFaceIndex++] = v1;
                 newFaces[newFaceIndex++] = v2;
                 newFaces[newFaceIndex++] = v3;
+                //Workshop tests...
                 //uvs[i] = new Vector2(0.1f, 0.5f);
             } else
             {
+                //Workshop tests...
                 //uvs[i] = new Vector2(0.9f, 0.5f);
             }
         }
-
+        //Workshop tests...
         //mesh.vertices = verts;
         //mesh.uv = uvs;  
         mesh.triangles = newFaces;
