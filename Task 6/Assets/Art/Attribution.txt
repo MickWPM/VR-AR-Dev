@@ -1,0 +1,16 @@
+fish_texture_gemini.png
+
+Gemini generated using provided UV layout and the following prompt:
+1. "This is the 3D model of a super simple fish I have created. I have also included the UV layout standalone. Please generate a nice styalised texture for this fish based off the provided UVs. Note the UV layout for both sides are transposed so left and right side will be mirrored."
+2. "Thats perfect but please provide the standalone texture without the UV exported lines."
+3. "Please provide this image without the UV layout edges. It should be the same dimensions as the provided UV layout (1024x1024)"
+
+
+
+shark_texture_gemini.png
+1. "Please generate a cartoony shark texture for this model. Use the referenced fish as a style guide.
+The UV map is attached for reference and a labelled version of the UV map so you know where the islands are located on the model.
+Please ensure the generated texture is the same dimensions as the UV layout (1024x1024) and stick as closely to the islands as possible. Do not include the UV edges, only the final standalone texture."
+2. "Please generate it to look more like a shark than the fish style; keep the toony aesthetic (the face is perfect) but replace the fishy scales and tail with something more sharklike"
+3. "Please mirror the right hand version so it aligns with the islands properly. While the nicks in the finx look great, they dont work with the low poly model so please avoid them for now."
+
