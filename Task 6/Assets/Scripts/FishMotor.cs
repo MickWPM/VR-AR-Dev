@@ -40,8 +40,8 @@ public class FishMotor : MonoBehaviour
     private float moveSpeed = 0;
     public void UpdateMovement()
     {
-        Vector3 targetPos = moveTargetTransform == null ? moveTargetPosition : moveTargetTransform.position;
-        Vector3 direction = targetPos - transform.position;
+        moveTargetPosition = CurrentTargetPosition();
+        Vector3 direction = moveTargetPosition - transform.position;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.RotateTowards(
                         transform.rotation,
@@ -50,7 +50,7 @@ public class FishMotor : MonoBehaviour
                     );
 
         rb.linearVelocity = transform.forward * moveSpeed;
-        if (Vector3.Distance(transform.position, targetPos) < arrivalThreshold)
+        if (Vector3.Distance(transform.position, moveTargetPosition) < arrivalThreshold)
         {
             ArrivedAtTargetEvent?.Invoke();
         }
