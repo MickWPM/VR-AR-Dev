@@ -43,7 +43,10 @@ public class FishSeekFood : IState
     public void ExitState()
     {
         motor.ArrivedAtTargetEvent -= OnArrivedAtTarget;
-        fleeTrigger.FleeTriggeredByFishEvent -= FleeTriggered;
+        if (fleeTrigger != null)
+        {
+            fleeTrigger.FleeTriggeredByFishEvent -= FleeTriggered;
+        }
     }
 
     public void UpdateState()
