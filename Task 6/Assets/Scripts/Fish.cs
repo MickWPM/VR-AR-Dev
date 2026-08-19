@@ -1,9 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(FishMotor))]
 public class Fish : MonoBehaviour
 {
     [SerializeField] private FishType type;
     public FishType Type { get { return type; } }
+    private FishMotor motor;
+
+    private void Awake()
+    {
+        motor = gameObject.GetComponent<FishMotor>();
+    }
 
     private void Start()
     {
@@ -13,7 +20,6 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         Brain_Update();
-        Motor_Update();
     }
 
 
@@ -35,98 +41,6 @@ public class Fish : MonoBehaviour
     }
 
 
-    #endregion
-
-    #region Motor
-    public Rigidbody rb;
-    private Transform moveTargetTransform;
-    private Vector3 moveTargetPosition;
-    public void Motor_SetTarget(Transform targetTransform)
-    {
-        moveTargetTransform = targetTransform;
-    }
-
-    public void Motor_SetTarget(Vector3 targetPosition)
-    {
-        moveTargetTransform = null;
-        moveTargetPosition = targetPosition;
-    }
-
-    public Vector3 CurrentTargetPosition()
-    {
-        return moveTargetTransform == null ? moveTargetPosition : moveTargetTransform.position;
-    }
-
-    private void Motor_Update()
-    {
-        Motor_UpdateMovement();
-    }
-
-
-    [SerializeField] private float rotationSpeedSlow = 90, rotationSpeedFast = 270, rotationSpeedTurbo = 520; 
-    private float rotationSpeed;
-    [SerializeField] private float arrivalThreshold = 0.05f;
-    private float moveSpeed = 0;
-    public void Motor_UpdateMovement()
-    {
-        Vector3 targetPos = moveTargetTransform == null ? moveTargetPosition : moveTargetTransform.position;
-        Vector3 direction = currentMoveLocation - transform.position;
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.RotateTowards(
-                        transform.rotation,
-                        targetRotation,
-                        rotationSpeed * Time.deltaTime
-                    );
-
-        rb.linearVelocity = transform.forward * moveSpeed;
-        if (Vector3.Distance(transform.position, targetPos) < arrivalThreshold)
-        {
-            ArrivedAtTargetEvent?.Invoke();
-        }
-    }
-
-    public event System.Action ArrivedAtTargetEvent;
-    public event System.Action<MoveRate> MoveRateUpdatedEvent;
-
-    [SerializeField] float slowMoveSpeed, fastMoveSpeed, turboMoveSpeed;
-    public void Motor_SetMoveRate(MoveRate moveRate)
-    {
-        switch (moveRate)
-        {
-            case MoveRate.Slow:
-                moveSpeed = slowMoveSpeed;
-                rotationSpeed = rotationSpeedSlow;
-                break;
-            case MoveRate.Fast:
-                moveSpeed = fastMoveSpeed;
-                rotationSpeed = rotationSpeedFast;
-                break;
-            case MoveRate.Turbo:
-                moveSpeed = turboMoveSpeed;
-                rotationSpeed = rotationSpeedTurbo;
-                break;
-            default:
-                moveSpeed = slowMoveSpeed;
-                rotationSpeed = rotationSpeedSlow;
-                Debug.LogWarning($"Unhandled move speed: {moveRate}", gameObject);
-                break;
-        }
-        MoveRateUpdatedEvent?.Invoke(moveRate);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, CurrentTargetPosition());
-    }
-
-    public enum MoveRate { Slow, Fast, Turbo}
-
-    public MoveRate testMoveRate;
-    [ContextMenu("Update move rate")]
-    public void SetTestMoveRate()
-    {
-        Motor_SetMoveRate(testMoveRate);
-    }
     #endregion
 
 
@@ -164,10 +78,9 @@ public class Fish : MonoBehaviour
     {
         currentState = CurrentState.Idle;
         currentMoveLocation = WorldHelper_RandomInsideTank();
-        Motor_SetTarget(currentMoveLocation);
-        Motor_SetMoveRate(MoveRate.Slow);
-        ArrivedAtTargetEvent += OnArrivedAtTarget;
-
+        motor.SetTarget(currentMoveLocation);
+        motor.SetMoveRate(FishMotor.MoveRate.Slow);
+        motor.ArrivedAtTargetEvent += OnArrivedAtTarget;
 
         fleeTrigger = gameObject.GetComponentInChildren<FleeTriggerScript>();
         if (fleeTrigger != null)
@@ -188,8 +101,8 @@ public class Fish : MonoBehaviour
         //for now just swim faster to a new random pos
 
         currentMoveLocation = WorldHelper_RandomInsideTank();
-        Motor_SetTarget(currentMoveLocation);
-        Motor_SetMoveRate(MoveRate.Turbo);
+        motor.SetTarget(currentMoveLocation);
+        motor.SetMoveRate(FishMotor.MoveRate.Turbo);
     }
 
     private void FleeAllClear()
@@ -202,13 +115,13 @@ public class Fish : MonoBehaviour
 
     private void ExitIdle()
     {
-        ArrivedAtTargetEvent -= OnArrivedAtTarget;
+        motor.ArrivedAtTargetEvent -= OnArrivedAtTarget;
         fleeTrigger.FleeTriggeredByFishEvent -= FleeTriggered;
     }
     private void OnArrivedAtTarget()
     {
         currentMoveLocation = WorldHelper_RandomInsideTank();
-        Motor_SetTarget(currentMoveLocation);
+        motor.SetTarget(currentMoveLocation);
     }
 
     private Vector3 currentMoveLocation = Vector3.zero;

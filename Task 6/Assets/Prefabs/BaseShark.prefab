@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7410189002618889842}
   - component: {fileID: 140756230391612487}
   - component: {fileID: 7748461545666917557}
+  - component: {fileID: -8826274196674142061}
   m_Layer: 0
   m_Name: BaseShark
   m_TagString: Untagged
@@ -165,8 +166,6 @@ MonoBehaviour:
   minShaderSpeed: 3
   fastShaderSpeed: 20
   turboShaderSpeed: 50
-  fastSwimSpeedRange: {x: 0.5, y: 1}
-  testSpeed: 0.2
 --- !u!114 &140756230391612487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,13 +181,6 @@ MonoBehaviour:
   type: 1
   fishtankExtentsCollider: {fileID: 0}
   extentsThreshold: 0.95
-  rb: {fileID: 7748461545666917557}
-  rotationSpeed: 520
-  arrivalThreshold: 0.05
-  slowMoveSpeed: 0.1
-  fastMoveSpeed: 0.6
-  turboMoveSpeed: 1.5
-  testMoveRate: 0
   currentState: 0
 --- !u!54 &7748461545666917557
 Rigidbody:
@@ -217,6 +209,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8826274196674142061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8127404368044244791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268563a248a551a4aa574d36df486dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishMotor
+  rb: {fileID: 0}
+  rotationSpeedSlow: 90
+  rotationSpeedFast: 270
+  rotationSpeedTurbo: 520
+  arrivalThreshold: 0.05
+  slowMoveSpeed: 0.15
+  fastMoveSpeed: 0.9
+  turboMoveSpeed: 1.2
+  testMoveRate: 0
 --- !u!1001 &6021292462304943638
 PrefabInstance:
   m_ObjectHideFlags: 0
