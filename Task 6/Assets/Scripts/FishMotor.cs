@@ -91,13 +91,4 @@ public class FishMotor : MonoBehaviour
     }
 
     public enum MoveRate { Slow, Fast, Turbo }
-
-    #region TestingOnly
-    public MoveRate testMoveRate;
-    [ContextMenu("Update move rate")]
-    public void SetTestMoveRate()
-    {
-        SetMoveRate(testMoveRate);
-    }
-    #endregion
 }
