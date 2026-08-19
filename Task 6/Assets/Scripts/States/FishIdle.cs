@@ -7,13 +7,15 @@ public class FishIdle : IState
     private FishMotor motor;
     private System.Func<Vector3> RandomLocationInsideTank;
     private FleeTriggerScript fleeTrigger;
+    private FoodTriggerScript foodTrigger;
 
     public string StateName => "Idle";
 
-    public FishIdle(FishMotor motor, FleeTriggerScript fleeTrigger, System.Func<Vector3> RandomLocationInsideTank)
+    public FishIdle(FishMotor motor, FleeTriggerScript fleeTrigger, FoodTriggerScript foodTrigger, System.Func<Vector3> RandomLocationInsideTank) 
     {
         this.motor = motor;
         this.fleeTrigger = fleeTrigger;
+        this.foodTrigger = foodTrigger;
         this.RandomLocationInsideTank = RandomLocationInsideTank;
     }
 
@@ -28,17 +30,30 @@ public class FishIdle : IState
         {
             fleeTrigger.FleeTriggeredByFishEvent += FleeTriggered;
         }
+
+        if (foodTrigger != null)
+        {
+            foodTrigger.FoodFoundEvent += FoodSeen;
+        }
     }
 
     public void ExitState()
     {
-        motor.ArrivedAtTargetEvent -= OnArrivedAtTarget;
-        fleeTrigger.FleeTriggeredByFishEvent -= FleeTriggered;
+        motor.ArrivedAtTargetEvent -= OnArrivedAtTarget; 
+        if (fleeTrigger != null)
+        {
+            fleeTrigger.FleeTriggeredByFishEvent -= FleeTriggered;
+        }
+
+        if (foodTrigger != null)
+        {
+            foodTrigger.FoodFoundEvent -= FoodSeen;
+        }
     }
 
     public void UpdateState()
     {
-        //Check for transitions: Do we need to flee? Have we found food?
+        //Check for transitions - currently this is handled by events...
     }
 
 
@@ -53,5 +68,12 @@ public class FishIdle : IState
     private void FleeTriggered(Fish fish)
     {
         IdleFleeTriggeredEvent?.Invoke(fish);
+    }
+
+    public event System.Action<Fish> FoodSeenEvent;
+    private void FoodSeen(Fish fish)
+    {
+        FoodSeenEvent?.Invoke(fish);
+        Debug.Log("FOOOOOOOD!", fish.gameObject);
     }
 }

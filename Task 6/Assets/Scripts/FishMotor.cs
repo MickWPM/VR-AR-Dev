@@ -12,15 +12,18 @@ public class FishMotor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void SetTarget(Transform targetTransform)
+    float overrideArrival = -1;
+    public void SetTarget(Transform targetTransform, float overrideArrival = -1)
     {
         moveTargetTransform = targetTransform;
+        this.overrideArrival = overrideArrival;
     }
 
-    public void SetTarget(Vector3 targetPosition)
+    public void SetTarget(Vector3 targetPosition, float overrideArrival = -1)
     {
         moveTargetTransform = null;
         moveTargetPosition = targetPosition;
+        this.overrideArrival = overrideArrival;
     }
 
     public Vector3 CurrentTargetPosition()
@@ -50,10 +53,11 @@ public class FishMotor : MonoBehaviour
                     );
 
         rb.linearVelocity = transform.forward * moveSpeed;
-        if (Vector3.Distance(transform.position, moveTargetPosition) < arrivalThreshold)
+        float threshold = overrideArrival > 0 ? overrideArrival : arrivalThreshold;
+        if (Vector3.Distance(transform.position, moveTargetPosition) < threshold)
         {
             ArrivedAtTargetEvent?.Invoke();
-        }
+        } 
     }
 
     public event System.Action ArrivedAtTargetEvent;

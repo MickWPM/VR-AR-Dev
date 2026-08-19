@@ -222,6 +222,7 @@ Transform:
   - {fileID: 2182032214843883564}
   - {fileID: 1775484962096695124}
   - {fileID: 6176717070496775705}
+  - {fileID: 5668861774149270688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-6351132383656689189
@@ -252,9 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fish
   type: 0
-  fishtankExtentsCollider: {fileID: 0}
-  extentsThreshold: 0.95
-  currentState: 0
 --- !u!54 &7322289666861011427
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -302,7 +300,6 @@ MonoBehaviour:
   slowMoveSpeed: 0.1
   fastMoveSpeed: 0.4
   turboMoveSpeed: 1
-  testMoveRate: 0
 --- !u!114 &6909575110397150391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +312,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff48dce2e9952ff49bd1f865640be253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishBrain
+  currentStateDescription: 
+  fishtankExtentsCollider: {fileID: 0}
+  extentsThreshold: 0.95
+--- !u!1 &7729749566043769106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5668861774149270688}
+  - component: {fileID: 8017947058727137533}
+  - component: {fileID: 5382652646168641486}
+  m_Layer: 8
+  m_Name: FoodTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5668861774149270688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729749566043769106}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 925214364059155845}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &8017947058727137533
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729749566043769106}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 823
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.375
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5382652646168641486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729749566043769106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d472a0ee95e3d15448405e0e5c761541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodTriggerScript
+  foodTypes: 02000000
+  maxFoodInRange: 5
 --- !u!1001 &1856217247254046663
 PrefabInstance:
   m_ObjectHideFlags: 0
