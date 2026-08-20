@@ -1,5 +1,4 @@
 using System;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class FishFlee : IState
@@ -27,10 +26,6 @@ public class FishFlee : IState
     {
         fleeTrigger.FleeAllClearEvent += FleeAllClear;
         motor.ArrivedAtTargetEvent += OnArrivedAtTarget;
-
-        //temp do the work for flee
-        //get flee pos....
-        //for now just swim faster to a new random pos
 
         currentMoveLocation = RandomLocationInsideTank();
         motor.SetTarget(currentMoveLocation, moveArriveOverride);

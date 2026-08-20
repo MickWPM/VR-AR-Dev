@@ -1,5 +1,4 @@
 using UnityEngine;
-using static FishBrain;
 
 public class FishIdle : IState
 {
