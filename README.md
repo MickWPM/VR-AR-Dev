@@ -85,3 +85,23 @@ Code:
 
 Video:
 [Task 4 summary video](https://youtu.be/GV403oGluyU)
+
+
+
+## Scenario 6 - Fishtank
+
+Features:
+- Pure C# states, defined by interfaces with senses propogated through C# events
+- Dependency injection through state constructors supports flexibility in state design while adhering to Entry, Update and Exit state calls
+- Extensible through integration of additional senses and states as well as arbitrary sense (events) processing; transitions are not just immediate on event fire
+- Scenario 4 lessons brought in to animate fish using vertex offsets with custom shader which supports arbitrary offsets for threshold between 'stable' body and 'swimming' tail.
+- Integrated dynamic rigidbody updates for 'fish food' dropped in from above the tank
+- Integrated player spawning of fish and food to influence ecosystem 
+
+The event based architecture of the state machine supports optional components for sensing/event behaiour, in line with the Unity component system approach. The tradeoff for this is the `brain' script requires additional conditional setup for each new component but this affords the design time flexibility of mixing and matching sensing components. 
+
+Code:
+[Task 6 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/960da17be12acb3878f814188629c4a35af35414/Task%206)
+
+Video:
+[Task 6 summary video](https://youtu.be/QWv0F3EjT3A)
