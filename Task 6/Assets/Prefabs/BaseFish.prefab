@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FleeTriggerScript
   fleeTypes: 01000000
+  fleeArriveDistanceOverride: 0.02
   maxFleeInRange: 10
   threatLayerMask:
     serializedVersion: 2
@@ -294,12 +295,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishMotor
   rb: {fileID: 0}
   rotationSpeedSlow: 90
-  rotationSpeedFast: 270
-  rotationSpeedTurbo: 520
+  rotationSpeedFast: 360
+  rotationSpeedTurbo: 720
   arrivalThreshold: 0.05
   slowMoveSpeed: 0.1
   fastMoveSpeed: 0.4
-  turboMoveSpeed: 1
+  turboMoveSpeed: 0.8
 --- !u!114 &6909575110397150391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishBrain
   currentStateDescription: 
+  foodEatRangeOverride: -1
+  hungerTimer: 5
   fishtankExtentsCollider: {fileID: 0}
   extentsThreshold: 0.95
 --- !u!1 &7729749566043769106
@@ -367,7 +370,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.375
+  m_Radius: 0.99
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5382652646168641486
 MonoBehaviour:

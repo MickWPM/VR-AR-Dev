@@ -19,7 +19,7 @@ public class FoodTriggerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Fish f = other.GetComponentInParent<Fish>();
-        if (f == null) return;
+        if (f == null || f.enabled == false) return;
 
         bool food = false;
         for (int i = 0; i < foodTypes.Length; i++)

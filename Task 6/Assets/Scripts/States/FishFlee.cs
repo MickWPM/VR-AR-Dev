@@ -9,6 +9,7 @@ public class FishFlee : IState
     private FishMotor motor;
     private FleeTriggerScript fleeTrigger;
     private System.Func<Vector3> RandomLocationInsideTank;
+    private float moveArriveOverride = -1;
 
     public FishFlee(FishMotor motor, FleeTriggerScript fleeTrigger, Func<Vector3> randomLocationInsideTank)
     {
@@ -16,17 +17,23 @@ public class FishFlee : IState
         this.fleeTrigger = fleeTrigger;
         RandomLocationInsideTank = randomLocationInsideTank;
     }
+    
+    public void SetMoveArriveOverride(float moveArriveOverride)
+    {
+        this.moveArriveOverride = moveArriveOverride;
+    }
 
     public void EnterState()
     {
         fleeTrigger.FleeAllClearEvent += FleeAllClear;
+        motor.ArrivedAtTargetEvent += OnArrivedAtTarget;
 
         //temp do the work for flee
         //get flee pos....
         //for now just swim faster to a new random pos
 
         currentMoveLocation = RandomLocationInsideTank();
-        motor.SetTarget(currentMoveLocation);
+        motor.SetTarget(currentMoveLocation, moveArriveOverride);
         motor.SetMoveRate(FishMotor.MoveRate.Turbo);
     }
 
@@ -34,6 +41,12 @@ public class FishFlee : IState
     public void ExitState()
     {
         fleeTrigger.FleeAllClearEvent -= FleeAllClear;
+        motor.ArrivedAtTargetEvent -= OnArrivedAtTarget;
+    }
+    private void OnArrivedAtTarget()
+    {
+        currentMoveLocation = RandomLocationInsideTank();
+        motor.SetTarget(currentMoveLocation, moveArriveOverride);
     }
 
     public void UpdateState()

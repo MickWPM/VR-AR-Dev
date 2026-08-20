@@ -12,6 +12,12 @@ public class FishMotor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void OnEnable()
+    {
+        rb.useGravity = false;
+        rb.linearVelocity = Vector3.zero;
+    }
+
     float overrideArrival = -1;
     public void SetTarget(Transform targetTransform, float overrideArrival = -1)
     {

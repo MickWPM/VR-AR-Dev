@@ -242,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishBrain
   currentStateDescription: 
   foodEatRangeOverride: 0.17
+  hungerTimer: 15
   fishtankExtentsCollider: {fileID: 0}
   extentsThreshold: 0.95
 --- !u!1 &8497933587068980733

@@ -5,6 +5,7 @@ public class FleeTriggerScript : MonoBehaviour
     public Fish.FishType[] fleeTypes;
     public event System.Action<Fish> FleeTriggeredByFishEvent;
     public event System.Action FleeAllClearEvent;
+    public float fleeArriveDistanceOverride = -1f;
 
     private SphereCollider fleeCollider;
 
