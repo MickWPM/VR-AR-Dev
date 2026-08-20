@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private void SpawnFishAction_performed(InputAction.CallbackContext obj)
     {
-        var fishBrain = Instantiate(fishPrefab, foodSpawnTransform.position, foodSpawnTransform.rotation);
+        var fishBrain = Instantiate(fishPrefab, foodSpawnTransform.position, fishSpawnTransform.rotation);
         fishBrain.fishTank = fishTank;
     }
 
