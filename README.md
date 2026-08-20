@@ -101,7 +101,7 @@ Features:
 The event based architecture of the state machine supports optional components for sensing/event behaiour, in line with the Unity component system approach. The tradeoff for this is the `brain' script requires additional conditional setup for each new component but this affords the design time flexibility of mixing and matching sensing components. 
 
 Code:
-[Task 6 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/960da17be12acb3878f814188629c4a35af35414/Task%206)
+[Task 6 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/c278a2c9164dab67347cb2b93fbbcacadf745f2f/Task%206)
 
 Video:
 [Task 6 summary video](https://youtu.be/QWv0F3EjT3A)
