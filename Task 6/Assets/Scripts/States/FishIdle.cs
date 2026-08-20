@@ -74,6 +74,5 @@ public class FishIdle : IState
     private void FoodSeen(Fish fish)
     {
         FoodSeenEvent?.Invoke(fish);
-        Debug.Log("FOOOOOOOD!", fish.gameObject);
     }
 }

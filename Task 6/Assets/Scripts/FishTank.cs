@@ -5,7 +5,6 @@ public class FishTank : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"{other.gameObject} entered tank");
         Fish f = other.gameObject.GetComponentInParent<Fish>();
         if (f != null)
         {

@@ -18,7 +18,6 @@ public class FishBrain : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Fishbrain:AWAKE");
         currentHungerLevel = Random.Range(0f, 1f);
         motor = GetComponent<FishMotor>();
         if (motor.enabled == false) motor.enabled = true;
@@ -28,7 +27,6 @@ public class FishBrain : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Fishbrain:ENABLE");
         if (motor.enabled == false) motor.enabled = true;
     }
 
