@@ -9,7 +9,6 @@ public class LightsabreDefinition : MonoBehaviour
     [SerializeField] private float radius = 0.05f;
     [SerializeField] private Color colour;
 
-
     public Color Colour { get => colour; }
     public float Radius { get => radius; }
     public float Range { get => range; }

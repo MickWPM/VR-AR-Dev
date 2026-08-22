@@ -194,6 +194,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab06eae9f2bfcce42a13b0f5c7ef97c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lightsabre
+  lightsabreToggleAction:
+    m_Name: Lightsabre Toggle
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a378a498-b27e-4e6c-8aed-7f2ed7758baf
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  sabreState: 0
+  extensionTime: 0.5
 --- !u!114 &130607444912862368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,3 +401,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightsabreBeam
   lineRenderer: {fileID: 499576026723895607}
   sabreDefinition: {fileID: 130607444912862368}
+  sabreScript: {fileID: 7652836273626383472}

@@ -5,6 +5,7 @@ public class LightsabreBeamVisuals : MonoBehaviour
 {
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private LightsabreDefinition sabreDefinition;
+    [SerializeField] private Lightsabre sabreScript;
 
     private void OnEnable()
     {
@@ -12,7 +13,16 @@ public class LightsabreBeamVisuals : MonoBehaviour
         {
             sabreDefinition.DefinitionUpdated += DefinitionUpdated;
         }
+        sabreScript.SabreExtensionUpdatedEvent += SabreScript_SabreExtensionUpdatedEvent;
         lineRenderer.positionCount = 2;
+    }
+
+    private void SabreScript_SabreExtensionUpdatedEvent(float extensionPercent)
+    {
+        Vector3 localTip = Vector3.forward * sabreDefinition.Range * extensionPercent;
+
+        Vector3[] positions = new Vector3[] { Vector3.zero, localTip };
+        lineRenderer.SetPositions(positions);
     }
 
     private void OnDisable()

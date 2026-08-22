@@ -171,6 +171,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_Name
+      value: Lightsabre Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 78f3af20-ee11-4ccf-9a8f-e111e87462db
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 024df5d4-dafd-466c-9074-85aaa8f24a94
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <XRController>{RightHand}/{TriggerButton}
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Mouse>/leftButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Lightsabre Toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9167479111757418347, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: lightsabreToggleAction.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Lightsabre Toggle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
