@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &951272552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2333091786904333928, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_Name
+      value: LightsabreGrabInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398880502879967571, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89949c3300be62649926bb0ffa7617c3, type: 3}
 --- !u!1 &1091720846
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,80 +543,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed8485be605bed3438ae92d821fe39bb, type: 3}
---- !u!1 &2015625383 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1785600433361273859, guid: ed8485be605bed3438ae92d821fe39bb, type: 3}
-  m_PrefabInstance: {fileID: 2015625382}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7363569530202257999
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 581298443482123478, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_PredictedVisualsTransform
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1683999203325465437, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: objectToBeCut
-      value: 
-      objectReference: {fileID: 2015625383}
-    - target: {fileID: 2952479118205946154, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3940096273872053822, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_Name
-      value: Lightsabre Grab Interactable
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.516
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7139210603240150552, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad93f24da2f215b449f13cfacb844e78, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -568,4 +551,4 @@ SceneRoots:
   - {fileID: 1667385312}
   - {fileID: 2015625382}
   - {fileID: 1091720848}
-  - {fileID: 7363569530202257999}
+  - {fileID: 951272552}
