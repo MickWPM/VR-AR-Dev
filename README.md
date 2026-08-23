@@ -86,6 +86,21 @@ Code:
 Video:
 [Task 4 summary video](https://youtu.be/GV403oGluyU)
 
+## Scenario 5 - Tool
+
+Features:
+- Runtime mesh cutting through vertex deletion
+- Distance based ray checks rather than infinite ray to be representative of tool
+- Integrated event system to manage separate tool definition (range etc), visuals and logic
+- Additional visual and audio effects integrated through event system to demonstrate utility
+
+Integration of distance check supports realistic tool use. Discrete tool definition, logic and visuals integrated through an event approach supports seperation of concerns and allows trivial extension of systems (eg. audio and visual). This same framework can be extended to support additional logic elements such as structural integrity checking (ie. a separate script to determine vertex islands and any unattached meshes for subsequent action)
+
+Code:
+[Task 5 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/764a78b30254ecdc454c7d50468eb4a2b159063f/Task%205)
+
+Video:
+[Task 5 summary video](https://youtu.be/JrJP2uRWM_o)
 
 
 ## Scenario 6 - Fishtank
