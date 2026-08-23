@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class Lightsabre : MonoBehaviour
 {
-    public InputAction lightsabreToggleAction;
-
     [SerializeField] private SabreState sabreState = SabreState.Retracted;
     private LightsabreCutting cuttingScript;
     private LightsabreBeamVisuals beamVisuals;
@@ -13,11 +11,7 @@ public class Lightsabre : MonoBehaviour
 
     private void Awake()
     {
-        lightsabreToggleAction.started += ToggleLightsabre;
-        lightsabreToggleAction.Enable();
-
         cuttingScript = gameObject.GetComponent<LightsabreCutting>();
-        beamVisuals = gameObject.GetComponentInChildren<LightsabreBeamVisuals>();
     }
 
     public event System.Action<SabreState> SabreStateChangedEvent;
@@ -25,14 +19,19 @@ public class Lightsabre : MonoBehaviour
     private void Start()
     {
         cuttingScript.enabled = false;
-        beamVisuals.enabled = false;
 
         SabreExtensionUpdatedEvent?.Invoke(currentExtensionPercent);
+        SabreStateChangedEvent += Lightsabre_SabreStateChangedEvent;
     }
 
-    private void ToggleLightsabre(InputAction.CallbackContext context)
+    private void Lightsabre_SabreStateChangedEvent(SabreState newState)
     {
-        Debug.Log("ToggleLightsabre");
+        cuttingScript.enabled = newState == SabreState.Extended;
+    }
+
+    [ContextMenu("Toggle sabre")]
+    public void ToggleLightsabre()
+    {
         if (sabreState == SabreState.Retracted)
         {
             ExtendSabre();
@@ -44,7 +43,6 @@ public class Lightsabre : MonoBehaviour
 
     private void ExtendSabre()
     {
-        Debug.Log("ExtendSabre");
         sabreState = SabreState.Extending;
         SabreStateChangedEvent?.Invoke(sabreState);
         ChangeSabreState();
@@ -52,7 +50,6 @@ public class Lightsabre : MonoBehaviour
 
     private void RetractSabre()
     {
-        Debug.Log("RetractSabre");
         sabreState = SabreState.Retracting;
         SabreStateChangedEvent?.Invoke(sabreState);
         ChangeSabreState();
@@ -60,7 +57,6 @@ public class Lightsabre : MonoBehaviour
 
     private async void ChangeSabreState()
     {
-        Debug.Log("ChangeSabreState");
         bool complete = false;
         int mul = sabreState == SabreState.Retracting ? -1 : 1;
         while (!complete)
