@@ -19,6 +19,7 @@ public class LightsabreCutting : MonoBehaviour
 
     public enum CuttingState { HitNothing, HitButOutOfRange, HitObjectInRange, HitObjectInRangeNoVertsInDistance, CUTTING };
     public CuttingState cuttingState;
+    public event System.Action<Vector3> CutHappenedEvent;
     void RayCutGeometry()
     {
         Ray ray = new Ray(rayObject.transform.position, rayObject.transform.forward);
@@ -72,6 +73,9 @@ public class LightsabreCutting : MonoBehaviour
                 newFaces[newFaceIndex++] = faces[i];
                 newFaces[newFaceIndex++] = faces[i + 1];
                 newFaces[newFaceIndex++] = faces[i + 2];
+            } else
+            {
+                CutHappenedEvent?.Invoke(hit.point);
             }
         }
         mesh.triangles = newFaces;
