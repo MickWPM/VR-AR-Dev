@@ -20,6 +20,7 @@ public class Lightsabre : MonoBehaviour
         beamVisuals = gameObject.GetComponentInChildren<LightsabreBeamVisuals>();
     }
 
+    public event System.Action<SabreState> SabreStateChangedEvent;
     public event System.Action<float> SabreExtensionUpdatedEvent;
     private void Start()
     {
@@ -45,6 +46,7 @@ public class Lightsabre : MonoBehaviour
     {
         Debug.Log("ExtendSabre");
         sabreState = SabreState.Extending;
+        SabreStateChangedEvent?.Invoke(sabreState);
         ChangeSabreState();
     }
 
@@ -52,6 +54,7 @@ public class Lightsabre : MonoBehaviour
     {
         Debug.Log("RetractSabre");
         sabreState = SabreState.Retracting;
+        SabreStateChangedEvent?.Invoke(sabreState);
         ChangeSabreState();
     }
 
@@ -70,9 +73,10 @@ public class Lightsabre : MonoBehaviour
             await Awaitable.EndOfFrameAsync();
         }
         sabreState = sabreState == SabreState.Retracting ? SabreState.Retracted : SabreState.Extended;
+        SabreStateChangedEvent?.Invoke(sabreState);
     }
 
-    private enum SabreState
+    public enum SabreState
     { 
         Retracted,
         Extended,
