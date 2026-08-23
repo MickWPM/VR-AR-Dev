@@ -13,3 +13,9 @@ SabreHum.wav
 Edited version of:
 042340_lightsaber5.mp3 by Freesound Community
 https://pixabay.com/sound-effects/film-special-effects-042340-lightsaber5mp3-75344/
+
+
+SabreCutting.wav
+Edited version of:
+Fire Burning Sound by Alex_Jauk
+https://pixabay.com/sound-effects/nature-fire-burning-sound-228105/
