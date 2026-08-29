@@ -669,7 +669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3826150490052814926}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.050000004, y: 0.13970587, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -679,7 +679,7 @@ Transform:
   - {fileID: 8642612166765323326}
   - {fileID: 1534839130208054093}
   m_Father: {fileID: 1843138835538150688}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5405341480605492944
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IKTargetFollowOnPlane
   handPositionTarget: {fileID: 0}
   grabberRotationTransform: {fileID: 3190281017940664865}
-  zMinThreshold: -0.5
+  zMinThreshold: 0.5
 --- !u!1 &7260463288547073682
 GameObject:
   m_ObjectHideFlags: 0

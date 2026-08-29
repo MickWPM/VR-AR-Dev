@@ -3,10 +3,17 @@ using UnityEngine;
 public class HumanHandRelativePosition : MonoBehaviour
 {
     [SerializeField] private Transform handTransform;
-    public Vector3 tmp_pos_output;
-    public Vector3 LocalPosition { get => (handTransform.localPosition - transform.position); }
-    private void Update()
+    public Vector3 LocalPosition { get => GetLocalPosition(); }
+
+    [SerializeField] private float yOffset = 0f;
+    [SerializeField] private float movementScale = 1f;
+
+
+    public Vector3 GetLocalPosition()
     {
-        tmp_pos_output = LocalPosition;
+        Vector3 localPos = handTransform.localPosition;// - transform.position;
+        localPos *= movementScale;
+        localPos.y += yOffset;
+        return localPos;
     }
 }

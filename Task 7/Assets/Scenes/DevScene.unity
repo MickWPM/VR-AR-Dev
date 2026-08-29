@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5984023281464317994, guid: 3097f791f235cf54bb16dbcd011db52a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.94
+      objectReference: {fileID: 0}
     - target: {fileID: 6204659474211259199, guid: 3097f791f235cf54bb16dbcd011db52a, type: 3}
       propertyPath: m_Name
       value: HandReferencePoint

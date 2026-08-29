@@ -6,7 +6,8 @@ public class IKTargetFollowOnPlane : MonoBehaviour
     [SerializeField] private Transform grabberRotationTransform;
     private Vector3 transformStartPosition;
     private float localXOffset;
-    [SerializeField]private float zMinThreshold = -0.5f;
+    [SerializeField]private bool useMinThreshold = true;
+    [SerializeField]private float zMinThreshold = 0.5f;
 
     private void Awake()
     {
@@ -19,7 +20,7 @@ public class IKTargetFollowOnPlane : MonoBehaviour
         Vector3 targetPosition = handPositionTarget.LocalPosition;
         Vector3 localPosition = targetPosition - transformStartPosition;
         localPosition.x = localXOffset;
-        if (localPosition.z > zMinThreshold) localPosition.z = zMinThreshold;
+        if (useMinThreshold && localPosition.z < zMinThreshold) localPosition.z = zMinThreshold;
         transform.position = localPosition;
     }
 }
