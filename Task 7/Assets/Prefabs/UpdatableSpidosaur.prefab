@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d7cd610544d03cc4bb7f917d340fda9f, type: 3}
       propertyPath: m_Name
-      value: spidosaur (1)
+      value: UpdatableSpidosaur
       objectReference: {fileID: 0}
     - target: {fileID: 4478449966998102564, guid: d7cd610544d03cc4bb7f917d340fda9f, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

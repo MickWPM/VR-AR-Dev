@@ -11,7 +11,7 @@ public class HumanHandRelativePosition : MonoBehaviour
 
     public Vector3 GetLocalPosition()
     {
-        Vector3 localPos = handTransform.localPosition;// - transform.position;
+        Vector3 localPos = handTransform.localPosition;
         localPos *= movementScale;
         localPos.y += yOffset;
         return localPos;

@@ -46,12 +46,12 @@ public class SetupGrabbers : MonoBehaviour
     {
         foreach (var foot in feet)
         {
-            SetupLegManipulation(foot);
+            SetupManipulation(foot);
         }
     }
 
     private float distanceThreshold = 0.001f;
-    private void SetupLegManipulation(Transform foot)
+    private void SetupManipulation(Transform foot)
     {
         int level = 0;
         bool complete = false;
