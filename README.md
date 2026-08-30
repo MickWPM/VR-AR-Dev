@@ -120,3 +120,21 @@ Code:
 
 Video:
 [Task 6 summary video](https://youtu.be/QWv0F3EjT3A)
+
+## Scenario 7 - Bones
+
+Features:
+- Interactable bones through XR Interactables on specified limbs
+- Optional "foot" inclusion (Spidosaurus does not have any vetex weights assigned to foot bones so they are ignored in this case)
+- Distance threshold to support minimum bone distance between child and parent; if smaller than the threshold, the child will move to grandparent and so on until the distance threshold is met 
+- Extremity oriented "levels" to determine how far up the bone heirarchy to add manipulation.
+- "Ignore" list for bones to prevent bones in a certain chain from being interactable.
+- IK robot arm concept demonstration to show how in built tools can be leveraged to support more advanced bone manipulation.
+
+The bone discovery script is the primary extension; rather than merely finding the extremities it supports optional extremity inclusion, ignored bones (used in this case for the head) and a custom levels system to allow design time specification of how many bones up (from the feet) to be controllable. 
+
+Code:
+[Task 7 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/ce4d06010e6ae5587a16352d6eac778378bcbd90/Task%207)
+
+Video:
+[Task 7 summary video](https://youtu.be/vddRxmWW6fY)
