@@ -39,16 +39,13 @@ public static class ImageSimplifier
     //    //Find the numLevels closest colours
     //}
 
-    public static Texture2D GetQuantisedTexture(Texture2D image, Color[] quantisedColours)
-    {
-        Texture2D newImage;
-        Dictionary<Color, List<int>> pixelColours;
-        (newImage, pixelColours) = QuantiseImage(image, quantisedColours);
 
-        return newImage;
+    public static (Texture2D, Dictionary<Color, List<int>>) GetQuantisedTexture(Texture2D image, Color[] quantisedColours)
+    {
+        return QuantiseImage(image, quantisedColours);
     }
 
-    public static Texture2D GetQuantisedTexture(Texture2D image, int levels)
+    public static (Texture2D, Dictionary<Color, List<int>>) GetQuantisedTexture(Texture2D image, int levels)
     {
         Color[] quantisedColours = GetQuantisedLevels(image, levels);
         return GetQuantisedTexture(image, quantisedColours);
