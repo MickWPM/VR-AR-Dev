@@ -185,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 676bbe87bc601224581d8b56e6a41901, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -299,7 +299,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 676bbe87bc601224581d8b56e6a41901, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   quantisedRenderer: {fileID: 26563427}
   channelSelected: 1
   newColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  quantisedLevels: 4
+  quantisedLevels: 6
   markerTransformParent: {fileID: 740978645}
   markerPrefab: {fileID: 5840396938571711775, guid: cd020679953df5541a269567fed1607c, type: 3}
 --- !u!4 &1337886917
