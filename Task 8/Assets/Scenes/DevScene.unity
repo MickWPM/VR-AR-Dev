@@ -229,7 +229,8 @@ Transform:
   m_LocalPosition: {x: 0.46887, y: 0, z: 1.1998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 740978645}
   m_Father: {fileID: 1337886917}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617187852
@@ -472,6 +473,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &740978644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740978645}
+  m_Layer: 0
+  m_Name: ColourChannelSpawnLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740978645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740978644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.443, y: 0.641, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26563429}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1337886915
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +536,11 @@ MonoBehaviour:
   baseImage: {fileID: 2800000, guid: cbf5af9857551334ea746653fa8c62d8, type: 3}
   baseRenderer: {fileID: 617187854}
   quantisedRenderer: {fileID: 26563427}
+  channelSelected: 1
+  newColour: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   quantisedLevels: 4
+  markerTransformParent: {fileID: 740978645}
+  markerPrefab: {fileID: 5840396938571711775, guid: cd020679953df5541a269567fed1607c, type: 3}
 --- !u!4 &1337886917
 Transform:
   m_ObjectHideFlags: 0
