@@ -20,18 +20,24 @@ public class ImageManager : MonoBehaviour
         baseRenderer.material.mainTexture = baseImage;
     }
 
+
+    public bool clearImageOnUpdate = true;
     private void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             UpdateQuantised();
+            if (clearImageOnUpdate) SetAllChannelsToColour(Color.white);
         }
     }
 
-    [ContextMenu("Set Colour")]
-    public void TestSetColour()
+
+    public void SetAllChannelsToColour(Color col)
     {
-        SetColour(channelSelected, newColour);
+        for (int i = 0; i < channelSelected; i++)
+        {
+            SetColour(i, col);
+        }
     }
 
     public event System.Action<int, Color> ColourChannelUpdated;
