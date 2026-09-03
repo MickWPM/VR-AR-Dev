@@ -5,7 +5,7 @@ public class SceneReferences : MonoBehaviour
 {
     public ControlSystem controlSystem;
 
-    public GameObject XROriginGO, flatscreenControlGO;
+    public GameObject XROriginGO, XRCameraGO, flatscreenControlGO;
 
     private void Awake()
     {

@@ -876,6 +876,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 989400551622008641, guid: edcc33b628d43204da36821988bb7fe9, type: 3}
   m_PrefabInstance: {fileID: 2121769492}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1145054642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1602950436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1326785701
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,8 +925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1ed0e28cfb475458ad5c040df9f7f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneReferences
-  controlSystem: 0
+  controlSystem: 1
   XROriginGO: {fileID: 1417047986}
+  XRCameraGO: {fileID: 1145054642}
   flatscreenControlGO: {fileID: 636168881}
 --- !u!1 &1389326754
 GameObject:

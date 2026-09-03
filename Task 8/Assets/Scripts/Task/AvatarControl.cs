@@ -5,7 +5,7 @@ using UnityEngine;
 public class AvatarControl : NetworkBehaviour
 {
 
-    public GameObject XROriginGO, flatscreenControlGO;
+    public GameObject XROriginGO, XRCameraGO, flatscreenControlGO;
     private SceneReferences sceneReference;
 
     private void Awake()
@@ -14,6 +14,7 @@ public class AvatarControl : NetworkBehaviour
         //pass for now
         sceneReference = GameObject.FindFirstObjectByType<SceneReferences>();
         XROriginGO = sceneReference.XROriginGO;
+        XRCameraGO = sceneReference.XRCameraGO;
         flatscreenControlGO = sceneReference.flatscreenControlGO;
     }
 
@@ -30,10 +31,31 @@ public class AvatarControl : NetworkBehaviour
 
     public override void FixedUpdateNetwork()
     {
-        //assume windows for nw
-        Debug.Log("Setting position and rotation");
+        switch (sceneReference.controlSystem)
+        {
+            case ControlSystem.Windows:
+                UpdateNonVR();
+                break;
+            case ControlSystem.VR:
+                UpdateVR();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void UpdateNonVR()
+    {
         transform.position = flatscreenControlGO.transform.position;
         transform.rotation = flatscreenControlGO.transform.rotation;
+    }
+
+    private void UpdateVR()
+    {
+        
+        transform.position = XROriginGO.transform.position;
+        Vector3 lookRot = new Vector3(0, XRCameraGO.transform.rotation.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Euler(lookRot);
     }
 
     private void OnStartSetup()
