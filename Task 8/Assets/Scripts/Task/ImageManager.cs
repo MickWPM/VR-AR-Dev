@@ -54,7 +54,12 @@ public class ImageManager : NetworkBehaviour
         }
     }
 
-    [Rpc(RpcSources.All, RpcTargets.All)]
+    //RpcChannel.ReliableLargeData is not needed here but it is a simple way to fix mid-join updates
+    //This results in slower updates for already connected clients
+    //but it ensures that colour updates are not lost for clients mid connection
+    //The alternative would be to implement a queued command system for join in progress clients to execute after setup is complete
+    //This would give a better experience for already joined clients.
+    [Rpc(RpcSources.All, RpcTargets.All, Channel = RpcChannel.ReliableLargeData)] 
     public void SetColourRPC(int channel, Color col)
     {
         ExecuteSetColour(channel, col);
@@ -68,6 +73,7 @@ public class ImageManager : NetworkBehaviour
 
     private void ExecuteSetColour(int channel, Color col)
     {
+        if (colourChannelIndexes == null || colourChannelIndexes.Length <= channel || colourChannelIndexes[channel] == null) return;
         Color[] colours = quantisedImage.GetPixels();
         foreach (var index in colourChannelIndexes[channel])
         {
@@ -92,6 +98,7 @@ public class ImageManager : NetworkBehaviour
     #region ClientOnly
     public event System.Action ImageSetupCompleteEvent;
     public UnityEngine.Events.UnityEvent SetupCompleteEvent;
+    //Reliable large data needed here to pass the array
     [Rpc(RpcSources.All, RpcTargets.All, Channel = RpcChannel.ReliableLargeData)]
     public void SetColourChannelIndexesRPC([RpcTarget] PlayerRef targetPlayer, int numChannels, int channel, int[] indexesThisChannel, Color colourThisChannel)
     {
