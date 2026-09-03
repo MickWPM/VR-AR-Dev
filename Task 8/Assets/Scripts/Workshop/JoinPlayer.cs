@@ -1,15 +1,29 @@
 using Fusion;
 using UnityEngine;
 
-public class JoinPlayer : SimulationBehaviour, IPlayerJoined
+namespace workshop
 {
-    public GameObject avatarPrefab;
-    public void PlayerJoined(PlayerRef player)
+
+    public class JoinPlayer : SimulationBehaviour, IPlayerJoined
     {
-        Debug.Log($"Player {player} joined {player.PlayerId}");
-        if (player == Runner.LocalPlayer)
+        public GameObject avatarPrefab;
+        public void PlayerJoined(PlayerRef player)
         {
-            Runner.Spawn(avatarPrefab, inputAuthority:player);
+            Debug.Log($"Player {player} joined {player.PlayerId}");
+            if (player == Runner.LocalPlayer)
+            {
+                Runner.Spawn(avatarPrefab, inputAuthority:player);
+            }
         }
+
+        /*
+         * spawnn avatar
+         * is vr active? - SetupVRPlayer if so
+         * Is xr rig available?
+         * transform of XR rig to avatar position/rotation & parenting
+         */
+
+
     }
+
 }

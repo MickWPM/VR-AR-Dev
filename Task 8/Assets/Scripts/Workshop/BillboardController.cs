@@ -2,18 +2,21 @@ using Fusion;
 using TMPro;
 using UnityEngine;
 
-public class BillboardController : NetworkBehaviour
+namespace workshop
 {
-    public TextMeshPro billboard;
-
-    [Rpc(RpcSources.All, RpcTargets.All)]
-    public void ChangeTextRPC(string text)
+    public class BillboardController : NetworkBehaviour
     {
-        billboard.text = text;
-    }
+        public TextMeshPro billboard;
 
-    public void ChangeText(string text)
-    {
-        ChangeTextRPC(text);
+        [Rpc(RpcSources.All, RpcTargets.All)]
+        public void ChangeTextRPC(string text)
+        {
+            billboard.text = text;
+        }
+
+        public void ChangeText(string text)
+        {
+            ChangeTextRPC(text);
+        }
     }
 }
