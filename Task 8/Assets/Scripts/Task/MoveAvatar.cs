@@ -19,8 +19,6 @@ public class MoveAvatar : NetworkBehaviour
     public float speed = 1, turnSpeed = 90;
     private void Update()
     {
-        //if (Object.HasInputAuthority == false) return;
-
         Vector2 moveInput = moveActionRef.action.ReadValue<Vector2>();
 
         if (moveInput.sqrMagnitude > 0)
