@@ -16,14 +16,6 @@ namespace workshop
             }
         }
 
-        /*
-         * spawnn avatar
-         * is vr active? - SetupVRPlayer if so
-         * Is xr rig available?
-         * transform of XR rig to avatar position/rotation & parenting
-         */
-
-
     }
 
 }
