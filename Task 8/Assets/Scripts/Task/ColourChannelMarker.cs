@@ -53,4 +53,9 @@ public class ColourChannelMarker : MonoBehaviour, IPointerClickHandler
     {
         ColourChannelMarkerClicked?.Invoke(this);
     }
+
+    public void ExternalSelectMarker()
+    {
+        ColourChannelMarkerClicked?.Invoke(this);
+    }
 }

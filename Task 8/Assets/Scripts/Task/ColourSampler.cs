@@ -24,4 +24,10 @@ public class ColourSampler : MonoBehaviour, IPointerClickHandler
         ColourChanged?.Invoke(myColour);
         Debug.Log("Colour change clicked", gameObject);
     }
+
+    public void ExternalSelectColour()
+    {
+        ColourChanged?.Invoke(myColour);
+        Debug.Log("Select colour called", gameObject);
+    }
 }
