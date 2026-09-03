@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ColourChannelMarker : MonoBehaviour
+public class ColourChannelMarker : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private MeshRenderer channelMarkerMeshRenderer;
     [SerializeField] private ImageManager imageManager;
 
     private int myChannel = -1;
+    public int Channel => myChannel;
     private Color myColor = Color.white;
 
 
@@ -37,9 +39,18 @@ public class ColourChannelMarker : MonoBehaviour
         channelMarkerMeshRenderer.material.color = myColor;
     }
 
+
+
     private void OnDisable()
     {
         if (!setupComplete) return;
         imageManager.ColourChannelUpdated -= ImageManager_ColourChannelUpdated;
+    }
+
+
+    public static event System.Action<ColourChannelMarker> ColourChannelMarkerClicked;
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+        ColourChannelMarkerClicked?.Invoke(this);
     }
 }

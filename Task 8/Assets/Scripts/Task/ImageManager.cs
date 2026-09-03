@@ -12,6 +12,7 @@ public class ImageManager : NetworkBehaviour
 
     private Color[] colourChannelColours;
     private List<int>[] colourChannelIndexes;
+    [SerializeField]private bool[] channelsSetup;
 
     public bool clearImageOnInit = true;
     private void Awake()
@@ -28,6 +29,14 @@ public class ImageManager : NetworkBehaviour
             Debug.Log("IsSharedModeMasterClient");
             UpdateQuantised();
             if (clearImageOnInit) SetAllChannelsToColour(Color.white);
+            channelsSetup = new bool[quantisedLevels];
+            for (int i = 0; i < quantisedLevels; i++)
+            {
+                channelsSetup[i] = true;
+            }
+
+            ImageSetupCompleteEvent?.Invoke();
+            SetupCompleteEvent?.Invoke();
         }
         else
         {
@@ -81,6 +90,8 @@ public class ImageManager : NetworkBehaviour
     }
 
     #region ClientOnly
+    public event System.Action ImageSetupCompleteEvent;
+    public UnityEngine.Events.UnityEvent SetupCompleteEvent;
     [Rpc(RpcSources.All, RpcTargets.All, Channel = RpcChannel.ReliableLargeData)]
     public void SetColourChannelIndexesRPC([RpcTarget] PlayerRef targetPlayer, int numChannels, int channel, int[] indexesThisChannel, Color colourThisChannel)
     {
@@ -90,6 +101,13 @@ public class ImageManager : NetworkBehaviour
             colourChannelColours = new Color[numChannels];
             quantisedImage = new Texture2D(baseImage.width, baseImage.height);
             quantisedRenderer.material.mainTexture = quantisedImage;
+
+
+            channelsSetup = new bool[numChannels];
+            for (int i = 0; i < numChannels; i++)
+            {
+                channelsSetup[i] = false;
+            }
         }
         if (colourChannelIndexes == null || colourChannelIndexes.Length == 0)
         {
@@ -104,8 +122,18 @@ public class ImageManager : NetworkBehaviour
         ExecuteSetColour(channel, colourThisChannel);
         QuantisedImageChannelsUpdated?.Invoke(colourChannelColours);
 
-        //We could add a boolean array for each channel to confirm when we get the pixels 
-        //This would let us have a flag / event for when all the data is in (and we can interact with the scene)
+        channelsSetup[channel] = true;
+        bool setupComplete = true;
+        for (int i = 0; i < numChannels; i++)
+        {
+            if (channelsSetup[i] == false) setupComplete = false;
+        }
+        if (setupComplete)
+        {
+            Debug.Log("Setup is complete - game time");
+            ImageSetupCompleteEvent?.Invoke();
+            SetupCompleteEvent?.Invoke();
+        }
     }
 
     #endregion
