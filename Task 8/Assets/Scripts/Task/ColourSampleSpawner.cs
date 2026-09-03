@@ -27,7 +27,7 @@ public class ColourSampleSpawner : MonoBehaviour
                 sampler.transform.localRotation = Quaternion.identity;
                 sampler.SetupWithColour(colours[spawnNum]);
                 spawnNum++;
-                if (spawnNum > colours.Length) return;
+                if (spawnNum >= colours.Length) return;
             }
 
         }
