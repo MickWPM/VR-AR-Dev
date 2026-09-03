@@ -1,57 +1,125 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Linq;
+using Fusion;
 
-public class ImageManager : MonoBehaviour
+public class ImageManager : NetworkBehaviour
 {
     public Texture2D baseImage;
     public MeshRenderer baseRenderer, quantisedRenderer;
     private Texture2D quantisedImage;
+    [SerializeField]private int quantisedLevels = 6;
+
     private Color[] colourChannelColours;
     private List<int>[] colourChannelIndexes;
 
-    public int channelSelected = 1;
-    public Color newColour = Color.yellow;
-
-    [SerializeField]private int quantisedLevels = 6;
+    public bool clearImageOnInit = true;
     private void Awake()
     {
         baseRenderer.material.mainTexture = baseImage;
     }
 
-
-    public bool clearImageOnUpdate = true;
-    private void Update()
+    public override void Spawned()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        base.Spawned();
+
+        if (Runner.IsSharedModeMasterClient)
         {
+            Debug.Log("IsSharedModeMasterClient");
             UpdateQuantised();
-            if (clearImageOnUpdate) SetAllChannelsToColour(Color.white);
+            if (clearImageOnInit) SetAllChannelsToColour(Color.white);
+        }
+        else
+        {
+            Debug.Log("Not IsSharedModeMasterClient");
+            DataUpdateRequestedRPC(Runner.LocalPlayer);
         }
     }
 
 
     public void SetAllChannelsToColour(Color col)
     {
-        for (int i = 0; i < channelSelected; i++)
+        for (int i = 0; i < colourChannelIndexes.Length; i++)
         {
             SetColour(i, col);
         }
     }
 
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void SetColourRPC(int channel, Color col)
+    {
+        ExecuteSetColour(channel, col);
+    }
+
     public event System.Action<int, Color> ColourChannelUpdated;
-    public void SetColour(int channel,  Color newColour)
+    public void SetColour(int channel, Color newColour)
+    {
+        SetColourRPC(channel, newColour);
+    }
+
+    private void ExecuteSetColour(int channel, Color col)
     {
         Color[] colours = quantisedImage.GetPixels();
         foreach (var index in colourChannelIndexes[channel])
         {
-            colours[index] = newColour;
+            colours[index] = col;
         }
-        colourChannelColours[channel] = newColour;
+        colourChannelColours[channel] = col;
         quantisedImage.SetPixels(colours);
         quantisedImage.Apply();
-        ColourChannelUpdated?.Invoke(channel, newColour);
+        ColourChannelUpdated?.Invoke(channel, col);
+    }
+
+
+    public int channelSelected = 1;
+    public Color newColour = Color.yellow;
+
+    [ContextMenu("Test set colour")]
+    public void TestSetColour()
+    {
+        SetColour(channelSelected, newColour);
+    }
+
+    #region ClientOnly
+    [Rpc(RpcSources.All, RpcTargets.All, Channel = RpcChannel.ReliableLargeData)]
+    public void SetColourChannelIndexesRPC([RpcTarget] PlayerRef targetPlayer, int numChannels, int channel, int[] indexesThisChannel, Color colourThisChannel)
+    {
+        if (Runner.IsSharedModeMasterClient == true) return;
+        if (colourChannelColours == null || colourChannelColours.Length == 0)
+        {
+            colourChannelColours = new Color[numChannels];
+            quantisedImage = new Texture2D(baseImage.width, baseImage.height);
+            quantisedRenderer.material.mainTexture = quantisedImage;
+        }
+        if (colourChannelIndexes == null || colourChannelIndexes.Length == 0)
+        {
+            this.colourChannelIndexes = new List<int>[numChannels];
+            for (int i = 0; i < numChannels; i++)
+            {
+                this.colourChannelIndexes[i] = new List<int>();
+            }
+        }
+        this.colourChannelColours[channel] = colourThisChannel;
+        this.colourChannelIndexes[channel] = new List<int>(indexesThisChannel);
+        ExecuteSetColour(channel, colourThisChannel);
+        QuantisedImageChannelsUpdated?.Invoke(colourChannelColours);
+
+        //We could add a boolean array for each channel to confirm when we get the pixels 
+        //This would let us have a flag / event for when all the data is in (and we can interact with the scene)
+    }
+
+    #endregion
+
+    #region ServerOnly
+
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    public void DataUpdateRequestedRPC(PlayerRef requester)
+    {
+        if (Runner.IsSharedModeMasterClient == false) return;
+        for (int i = 0; i < quantisedLevels; i++)
+        {
+            SetColourChannelIndexesRPC(requester, quantisedLevels, i, colourChannelIndexes[i].ToArray(), colourChannelColours[i]);
+        }
     }
 
     public event System.Action<Color[]> QuantisedImageChannelsUpdated;
@@ -63,8 +131,8 @@ public class ImageManager : MonoBehaviour
         var colours = colourChannelPixels.Keys.ToArray<Color>();
         quantisedLevels = colours.Length;
 
-        colourChannelColours = new Color[quantisedLevels];//new Dictionary<int, Color>();
-        colourChannelIndexes = new List<int>[quantisedLevels]; //new Dictionary<int, List<int>>();
+        colourChannelColours = new Color[quantisedLevels];
+        colourChannelIndexes = new List<int>[quantisedLevels];
         for (int i = 0; i < quantisedLevels; i++)
         {
             Color c = colours[i];
@@ -78,10 +146,14 @@ public class ImageManager : MonoBehaviour
         quantisedRenderer.material.mainTexture = quantisedImage;
         QuantisedImageChannelsUpdated?.Invoke(colourChannelColours);
     }
+    #endregion
 
+    #region RefactorOpportunities
     //Better as a seperate class
     [SerializeField] private Transform markerTransformParent = null;
     [SerializeField] private ColourChannelMarker markerPrefab;
+
+
     private void ImageManager_QuantisedImageChannelsUpdated(Color[] colours)
     {
         //Lazy catch null parent
@@ -110,6 +182,7 @@ public class ImageManager : MonoBehaviour
             marker.SetupMarker(i, colours[i], this);
         }
     }
+    #endregion
 
     private void OnEnable()
     {
@@ -119,6 +192,6 @@ public class ImageManager : MonoBehaviour
 
     private void OnDisable()
     {
-        this.QuantisedImageChannelsUpdated += ImageManager_QuantisedImageChannelsUpdated;
+        this.QuantisedImageChannelsUpdated -= ImageManager_QuantisedImageChannelsUpdated;
     }
 }
