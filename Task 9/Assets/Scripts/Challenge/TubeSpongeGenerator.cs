@@ -7,7 +7,6 @@ public class TubeSpongeGenerator : MonoBehaviour
     private SplineContainer splineContainer;
     private Spline spline;
     public SplineExtrude extruder;
-    UnityEngine.Splines.SplineMesh
 
     private void Awake()
     {
