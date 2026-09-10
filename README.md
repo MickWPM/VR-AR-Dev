@@ -138,3 +138,21 @@ Code:
 
 Video:
 [Task 7 summary video](https://youtu.be/vddRxmWW6fY)
+
+
+## Scenario 9 - Coral
+
+Features:
+- Polyp generator to seed position/orientations
+- CoralDefinition Data class to define parameters (Class used to enforce reasonable defaults)
+- CoralTube data struct stores data for each generated tube to allow ease of data passage (not required for this demo)
+- Scriptable Object data management used to neatly define parameter sets and render colours
+- Coral generation is polyp source agnostic, considering child game objects on Start
+
+The ScriptableObject data approach allows simple biome presets (as used in this implementation. The coral generation itself is easily extendable and the current example visualse generation can be updated to work with custom mesh functions by passing the CoralTube data struct on generation completion.
+
+Code:
+[Task 9 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/dfca9b53b0b2e1f9909d200c7483dd6cb7752667/Task%209)
+
+Video:
+[Task 9 summary video](https://youtu.be/BzSzifGe9-w)
