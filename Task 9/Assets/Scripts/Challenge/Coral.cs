@@ -26,6 +26,11 @@ public class Coral : MonoBehaviour
     private void CreateTube(Vector3 spawnPos, Vector3 initialDirection, CoralDefinition coralDefinition)
     {
         Debug.Log("Starting create tube");
+        Transform tubeParent = new GameObject("Tube Parent").transform;
+        tubeParent.SetParent(transform);
+        tubeParent.localPosition = Vector3.zero;
+        tubeParent.localRotation = Quaternion.identity;
+
         int segments = coralDefinition.segments;
         tube = new CoralTube(segments+1);
         float size = coralDefinition.baseWidth;
@@ -45,6 +50,7 @@ public class Coral : MonoBehaviour
             go.transform.localScale = new Vector3 (size, length, size);
             go.transform.up = growDir;
             go.GetComponentInChildren<MeshRenderer>().material.color = coralDefinitionSO.tubeColour;
+            go.transform.SetParent(tubeParent, true);
 
             pos += growDir * length;
 
