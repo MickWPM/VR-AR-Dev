@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class Coral : MonoBehaviour
 {
-    [SerializeField]private Transform[] childSpawnPoints;
-    public CoralDefinition exampleCoralDefinition;
+    public Transform budParent;
+    public CoralDefinitionSO coralDefinitionSO;
+    private CoralDefinition coralDefinition;
     public CoralTube tube;
     public GameObject tubePart;
     private void Start()
     {
-        if (childSpawnPoints == null || childSpawnPoints.Length == 0)
+        coralDefinition = coralDefinitionSO.coralDefinition;
+        if (budParent == null)
         {
-            CreateTube(transform.position, transform.up, exampleCoralDefinition);
-            return;
-        }
-        for (int i = 0; i < childSpawnPoints.Length; i++)
+            CreateTube(transform.position, transform.up, coralDefinition);
+        } else
         {
-            CreateTube(childSpawnPoints[i].position, childSpawnPoints[i].up, exampleCoralDefinition);
+            for (int i = 0; i < budParent.childCount; i++)
+            {
+                CreateTube(budParent.GetChild(i).position, budParent.GetChild(i).up, coralDefinition);
+            }
         }
     }
 
@@ -33,15 +36,18 @@ public class Coral : MonoBehaviour
         {
             tube.SetPoint(i, pos, size);
 
-            GameObject go = Instantiate(tubePart);
-            growDir = GetNewGrowDir(growDir, coralDefinition);
             size *= coralDefinition.segmentFalloff;
             length *= coralDefinition.segmentFalloff;
+            growDir = GetNewGrowDir(growDir, coralDefinition);
+            
+            GameObject go = Instantiate(tubePart);
             go.transform.position = pos;
             go.transform.localScale = new Vector3 (size, length, size);
             go.transform.up = growDir;
+            go.GetComponentInChildren<MeshRenderer>().material.color = coralDefinitionSO.tubeColour;
 
             pos += growDir * length;
+
         }
 
     }
