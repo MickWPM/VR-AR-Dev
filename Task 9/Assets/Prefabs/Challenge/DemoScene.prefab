@@ -670,6 +670,10 @@ PrefabInstance:
       value: Coral (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f63b7b47cfcd84e9adc7af6cd51b31, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 5
       objectReference: {fileID: 0}
@@ -768,6 +772,10 @@ PrefabInstance:
       value: Coral (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af0d0ef13c3d6224da4818a2627532c2, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 4
       objectReference: {fileID: 0}
@@ -861,6 +869,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d297388fa6f8d2143a63f348122b2f04, type: 2}
     - target: {fileID: 5910006178946407031, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -943,6 +955,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ac024229f35db0e4a8d1f12a63ae0b24, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.baseWidth
       value: 0.1
@@ -1033,6 +1049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af0d0ef13c3d6224da4818a2627532c2, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 4
@@ -1127,6 +1147,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f63b7b47cfcd84e9adc7af6cd51b31, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 5
@@ -1225,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d297388fa6f8d2143a63f348122b2f04, type: 2}
     - target: {fileID: 5910006178946407031, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -1307,6 +1335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af0d0ef13c3d6224da4818a2627532c2, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 4
@@ -1402,6 +1434,10 @@ PrefabInstance:
       value: Coral (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ac024229f35db0e4a8d1f12a63ae0b24, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.baseWidth
       value: 0.1
       objectReference: {fileID: 0}
@@ -1492,6 +1528,10 @@ PrefabInstance:
       value: Coral (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ac024229f35db0e4a8d1f12a63ae0b24, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.baseWidth
       value: 0.1
       objectReference: {fileID: 0}
@@ -1581,6 +1621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d297388fa6f8d2143a63f348122b2f04, type: 2}
     - target: {fileID: 5910006178946407031, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -1663,6 +1707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f63b7b47cfcd84e9adc7af6cd51b31, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 5
@@ -1761,6 +1809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d297388fa6f8d2143a63f348122b2f04, type: 2}
     - target: {fileID: 5910006178946407031, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -1843,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af0d0ef13c3d6224da4818a2627532c2, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 4
@@ -1937,6 +1993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d297388fa6f8d2143a63f348122b2f04, type: 2}
     - target: {fileID: 5910006178946407031, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -2019,6 +2079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f63b7b47cfcd84e9adc7af6cd51b31, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 5
@@ -2118,6 +2182,10 @@ PrefabInstance:
       value: Coral
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f63b7b47cfcd84e9adc7af6cd51b31, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 5
       objectReference: {fileID: 0}
@@ -2216,6 +2284,10 @@ PrefabInstance:
       value: Coral (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: af0d0ef13c3d6224da4818a2627532c2, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.segments
       value: 4
       objectReference: {fileID: 0}
@@ -2310,6 +2382,10 @@ PrefabInstance:
       value: Coral (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ac024229f35db0e4a8d1f12a63ae0b24, type: 2}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.baseWidth
       value: 0.1
       objectReference: {fileID: 0}
@@ -2399,6 +2475,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coral
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
+      propertyPath: coralDefinitionSO
+      value: 
+      objectReference: {fileID: 11400000, guid: ac024229f35db0e4a8d1f12a63ae0b24, type: 2}
     - target: {fileID: 4361510541481832744, guid: 5028c56e6696f7344a3a83a302ac79d3, type: 3}
       propertyPath: exampleCoralDefinition.baseWidth
       value: 0.1
