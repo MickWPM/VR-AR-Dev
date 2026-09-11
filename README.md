@@ -146,7 +146,7 @@ Features:
 - K Means image simplifier, run only on master client. Identify texture channels through pixel indexes for common data passage.
 - Large data reliable: Required for texture channels initially. Continued after load in to enforce state; ensuring messages on load in do not get lost.
 - Colour channel markers dynamic (number and colour) based on master client messages
-- Clients can move in multiplayer experience hwoever painting interactions enabled only when all channels are received
+- Clients can move in multiplayer experience however painting interactions enabled only when all channels are received
 - Integrated auto setup for flatscreen/VR including flatscreen controls and VR painting tool
 - Leveraged events to update object state (eg. VR tool)
 
