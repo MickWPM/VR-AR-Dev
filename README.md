@@ -140,6 +140,26 @@ Video:
 [Task 7 summary video](https://youtu.be/vddRxmWW6fY)
 
 
+## Scenario 7 - Multiplayer painting
+
+Features:
+- K Means image simplifier, run only on master client. Identify texture channels through pixel indexes for common data passage.
+- Large data reliable: Required for texture channels initially. Continued after load in to enforce state; ensuring messages on load in do not get lost.
+- Colour channel markers dynamic (number and colour) based on master client messages
+- Clients can move in multiplayer experience hwoever painting interactions enabled only when all channels are received
+- Integrated auto setup for flatscreen/VR including flatscreen controls and VR painting tool
+- Leveraged events to update object state (eg. VR tool)
+
+While all clients are using the same image in the demo, this archietcutre allows the master client to have any image distributed to clients and any number of colour channels and sampling options.
+
+Code:
+[Task 8 folder in task branch](https://github.com/MickWPM/VR-AR-Dev/tree/185d18c8093587f922436fac503898f87d4a6813/Task%208)
+
+Video:
+[Task 8 summary video](https://youtu.be/5FXaCk2qr_M)
+
+
+
 ## Scenario 9 - Coral
 
 Features:
