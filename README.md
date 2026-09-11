@@ -140,7 +140,7 @@ Video:
 [Task 7 summary video](https://youtu.be/vddRxmWW6fY)
 
 
-## Scenario 7 - Multiplayer painting
+## Scenario 8 - Multiplayer painting
 
 Features:
 - K Means image simplifier, run only on master client. Identify texture channels through pixel indexes for common data passage.
