@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Fusion;
 
-public class MoveAvatar : NetworkBehaviour
+public class MoveAvatar : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveActionRef;
 

@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 1971246501}
   - component: {fileID: 1971246500}
   m_Layer: 0
-  m_Name: Grab Interactable
+  m_Name: VR Paintbrush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1834,14 +1834,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindowsPlayerController
       objectReference: {fileID: 0}
-    - target: {fileID: 3139967935917426690, guid: 2392d65271b5dd34e8ef884f1c06b05c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4615437398207667524, guid: 2392d65271b5dd34e8ef884f1c06b05c, type: 3}
-      propertyPath: SortKey
-      value: 373387647
-      objectReference: {fileID: 0}
     - target: {fileID: 5701520898589102081, guid: 2392d65271b5dd34e8ef884f1c06b05c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1882,10 +1874,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7108410596560422507, guid: 2392d65271b5dd34e8ef884f1c06b05c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1900,7 +1888,7 @@ SceneRoots:
   - {fileID: 1326785702}
   - {fileID: 1775306735}
   - {fileID: 1602950436}
-  - {fileID: 322384750}
-  - {fileID: 2121769492}
-  - {fileID: 1971246503}
   - {fileID: 651480701600304937}
+  - {fileID: 2121769492}
+  - {fileID: 322384750}
+  - {fileID: 1971246503}

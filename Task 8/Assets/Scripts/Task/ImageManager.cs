@@ -1,7 +1,7 @@
-using UnityEngine;
+using Fusion;
 using System.Collections.Generic;
 using System.Linq;
-using Fusion;
+using UnityEngine;
 
 public class ImageManager : NetworkBehaviour
 {
@@ -103,6 +103,8 @@ public class ImageManager : NetworkBehaviour
     public void SetColourChannelIndexesRPC([RpcTarget] PlayerRef targetPlayer, int numChannels, int channel, int[] indexesThisChannel, Color colourThisChannel)
     {
         if (Runner.IsSharedModeMasterClient == true) return;
+        if (Runner.LocalPlayer.PlayerId != targetPlayer.PlayerId) return;
+
         if (colourChannelColours == null || colourChannelColours.Length == 0)
         {
             colourChannelColours = new Color[numChannels];
@@ -150,6 +152,7 @@ public class ImageManager : NetworkBehaviour
     [Rpc(RpcSources.All, RpcTargets.All)]
     public void DataUpdateRequestedRPC(PlayerRef requester)
     {
+        Debug.Log($"DataUpdateRequestedRPC: Player {requester.PlayerId}");
         if (Runner.IsSharedModeMasterClient == false) return;
         for (int i = 0; i < quantisedLevels; i++)
         {

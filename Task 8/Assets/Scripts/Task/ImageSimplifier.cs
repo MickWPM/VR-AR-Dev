@@ -4,41 +4,6 @@ using System.Collections.Generic;
 //Static helper class - image setup only
 public static class ImageSimplifier
 {
-    //Colour quantisation; take an image and number of colours and return an image that only has that number of colours
-    //Use a helper struct to provide the list of colours as well
-
-    //    public static QuantisedImage GetQuantised(Texture2D image, Color[] quantisedColours)
-    //    {
-    //        QuantisedImage quantisedImage = new QuantisedImage();
-    //        quantisedImage.numLevels = quantisedColours.Length;
-    ////        quantisedImage.quantisedColours = quantisedColours;
-    //        quantisedImage.image = QuantiseImage(image, quantisedColours);
-
-    //        return quantisedImage;
-    //    }
-
-
-    //    public static QuantisedImage GetQuantised(Texture2D image, int numLevels)
-    //    {
-    //        Color[] quantisedColours = GetColours(image, numLevels);
-    //        return GetQuantised(image, quantisedColours);
-    //    }
-
-    //    private static QuantisedColours[] GetColours(Texture2D image, int levels)
-    //    {
-    //        QuantisedColours[] colours = new Color[levels];
-
-
-
-
-    //        return colours;
-    //    }
-
-    //private static Color[] GetQuantisedLevels(Texture2D image, int numLevels)
-    //{
-    //    //Find the numLevels closest colours
-    //}
-
 
     public static (Texture2D, Dictionary<Color, List<int>>) GetQuantisedTexture(Texture2D image, Color[] quantisedColours)
     {
@@ -55,7 +20,7 @@ public static class ImageSimplifier
     //1 - randomly pick k centriods
     //2 - assign each pixel to closest centriod
     //3 - recalculate centriod as average of all within group
-    //
+    
     private static Color[] GetQuantisedLevels(Texture2D image, int numLevels)
     {
         Color[] pixels = image.GetPixels();
